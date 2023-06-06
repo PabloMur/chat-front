@@ -16,7 +16,7 @@ const Home = () => {
   return (
     <div className={styles.container}>
       <form className={styles.form} onSubmit={handleSubmit}>
-        <h1 className={styles.title}>Enviar Correo Electrónico</h1>
+        <h1 className={styles.title}>Ingresa Tu Email:</h1>
         <div className={styles.inputContainer}>
           <label htmlFor="email" className={styles.label}>
             Email:
