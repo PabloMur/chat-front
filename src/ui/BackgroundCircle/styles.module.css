@@ -1,0 +1,19 @@
+.circle {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+}
+
+.bottom {
+  position: absolute;
+  bottom: -250px;
+  left: 20px;
+  background-color: orange;
+}
+
+.top {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  background-color: purple;
+}
