@@ -1,11 +1,19 @@
-import "./App.css";
+import React, { Suspense } from "react";
+import * as ReactDom from "react-dom";
+import { BrowserRouter } from "react-router-dom";
+import { AppRoutes } from "./router";
+import { RecoilRoot } from "recoil";
+import { Loader } from "./components/loader";
 
 function App() {
   return (
-    <>
-      <div></div>
-      <h1>ChatRooms App - Powered By Pablo Murillo</h1>
-    </>
+    <Suspense fallback={<Loader />}>
+      <RecoilRoot>
+        <BrowserRouter>
+          <AppRoutes />
+        </BrowserRouter>
+      </RecoilRoot>
+    </Suspense>
   );
 }
 
