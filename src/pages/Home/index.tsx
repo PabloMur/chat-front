@@ -7,6 +7,7 @@ const Home = () => {
   const handleSubmit = (e: any) => {
     e.preventDefault();
     // Aquí puedes agregar la lógica para enviar el correo electrónico
+    alert(email);
   };
 
   const handleChange = (e: any) => {
