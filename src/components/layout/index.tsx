@@ -1,7 +1,5 @@
-import React from "react";
 import { Outlet } from "react-router-dom";
 import { Footer } from "../footer";
-import Circle from "../../ui/BackgroundCircle";
 import css from "./styles.module.css";
 
 const Layout = () => {
