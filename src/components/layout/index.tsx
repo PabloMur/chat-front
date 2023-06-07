@@ -8,7 +8,6 @@ const Layout = () => {
   return (
     <>
       <div className={css.root}>
-        <Circle position="bottom"></Circle>
         <Outlet />
       </div>
       <Footer />
