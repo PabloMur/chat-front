@@ -3,6 +3,7 @@ import { Layout } from "../components/layout";
 import WelcomePage from "../pages/Welcome";
 import { PasswordPage } from "../pages/Password";
 import { SignupPage } from "../pages/Signup";
+import { HomePage } from "../pages/Home";
 //<Route path="stack" element={<TecPage />}></Route>
 
 function AppRoutes() {
@@ -12,6 +13,7 @@ function AppRoutes() {
         <Route index element={<WelcomePage />} />
         <Route path="password" element={<PasswordPage />}></Route>
         <Route path="signup" element={<SignupPage />}></Route>
+        <Route path="home" element={<HomePage />}></Route>
       </Route>
     </Routes>
   );

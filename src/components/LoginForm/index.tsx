@@ -1,14 +1,34 @@
 import styles from "./styles.module.css";
-import { emailAtom } from "../../atoms";
-import { useRecoilValue } from "recoil";
+import { emailAtom, userTokenAtom } from "../../atoms";
+import { useRecoilValue, useSetRecoilState } from "recoil";
+import { useGetToken, useGoTo } from "../../hooks";
+import { useState } from "react";
+import { loaderAtom } from "../../atoms/uiAtoms";
 
 export const LoginForm = () => {
   const email = useRecoilValue(emailAtom);
+  const setToken = useSetRecoilState(userTokenAtom);
+  const setLoader = useSetRecoilState(loaderAtom);
+  const [password, setPassword] = useState("");
+  const goTo = useGoTo();
+
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+    setLoader(true);
+    const apiToken = await useGetToken(email, password);
+    setToken(apiToken.token);
+    setLoader(false);
+    goTo("/home");
+  };
+
+  const handleChange = (e: any) => {
+    setPassword(e.target.value);
+  };
 
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Iniciar sesión</h1>
-      <form className={styles.form}>
+      <form className={styles.form} onSubmit={handleSubmit}>
         <div className={styles.formGroup}>
           <label className={styles.label} htmlFor="email">
             Correo electrónico
@@ -16,7 +36,7 @@ export const LoginForm = () => {
               className={styles.input}
               type="email"
               id="email"
-              value={email}
+              placeholder={email}
             />
           </label>
         </div>
@@ -28,6 +48,7 @@ export const LoginForm = () => {
               type="password"
               id="password"
               placeholder="Contraseña"
+              onChange={handleChange}
             />
           </label>
         </div>

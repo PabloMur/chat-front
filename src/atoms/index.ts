@@ -9,3 +9,8 @@ export const isUser = atom({
   key: "isUser",
   default: false,
 });
+
+export const userTokenAtom = atom({
+  key: "userToken",
+  default: "",
+});
