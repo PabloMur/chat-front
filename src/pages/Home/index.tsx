@@ -1,13 +1,21 @@
-import { useState } from "react";
 import styles from "./styles.module.css";
+import { useCheckEmail, useGoTo } from "../../hooks";
+import { emailAtom } from "../../atoms";
+import { loaderAtom } from "../../atoms/uiAtoms";
+import { useRecoilState, useSetRecoilState } from "recoil";
+import { Loader } from "../../components/loader";
 
 const Home = () => {
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useRecoilState(emailAtom);
+  const loaderSetter = useSetRecoilState(loaderAtom);
+  const goTo = useGoTo();
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
-    // Aquí puedes agregar la lógica para enviar el correo electrónico
-    alert(email);
+    loaderSetter(true);
+    let test = await useCheckEmail(email);
+    loaderSetter(false);
+    test.exists ? goTo("/password") : goTo("/signup");
   };
 
   const handleChange = (e: any) => {
@@ -16,6 +24,7 @@ const Home = () => {
 
   return (
     <div className={styles.container}>
+      <Loader />
       <form className={styles.form} onSubmit={handleSubmit}>
         <h1 className={styles.title}>Ingresa Tu Email:</h1>
         <div className={styles.inputContainer}>
