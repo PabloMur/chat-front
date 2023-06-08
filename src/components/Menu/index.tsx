@@ -6,6 +6,11 @@ export const Menu = () => {
     <>
       <div className={css.root}>
         <Logo />
+        <div className={css.linkContainer}>
+          <ul className={css.list}>
+            <li className={css.li}>mi perfil</li>
+          </ul>
+        </div>
       </div>
     </>
   );

@@ -4,3 +4,30 @@
   width: 25%;
   border-right: 1px solid var(--borders);
 }
+
+.linkContainer {
+  background-color: red;
+  height: 85%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list {
+  background-color: rebeccapurple;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: start;
+}
+
+.li {
+  list-style: none;
+  background-color: black;
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
