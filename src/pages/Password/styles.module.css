@@ -1,5 +1,8 @@
 .root {
-  height: 100%;
-  width: 100%;
-  background-color: greenyellow;
+  height: 80vh;
+  width: 90%;
+  background-color: var(--paneles-bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

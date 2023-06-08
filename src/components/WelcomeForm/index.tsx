@@ -3,9 +3,8 @@ import { useCheckEmail, useGoTo } from "../../hooks";
 import { emailAtom } from "../../atoms";
 import { loaderAtom } from "../../atoms/uiAtoms";
 import { useRecoilState, useSetRecoilState } from "recoil";
-import { Loader } from "../../components/loader";
 
-const Home = () => {
+export const WelcomeForm = () => {
   const [email, setEmail] = useRecoilState(emailAtom);
   const loaderSetter = useSetRecoilState(loaderAtom);
   const goTo = useGoTo();
@@ -24,7 +23,6 @@ const Home = () => {
 
   return (
     <div className={styles.container}>
-      <Loader />
       <form className={styles.form} onSubmit={handleSubmit}>
         <h1 className={styles.title}>Ingresa Tu Email:</h1>
         <div className={styles.inputContainer}>
@@ -47,5 +45,3 @@ const Home = () => {
     </div>
   );
 };
-
-export default Home;

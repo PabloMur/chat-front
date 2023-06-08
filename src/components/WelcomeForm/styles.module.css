@@ -1,5 +1,5 @@
 .container {
-  background-color: #000;
+  background-color: var(--paneles-bg-color);
   height: 80vh;
   width: 90%;
   display: flex;

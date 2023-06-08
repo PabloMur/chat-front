@@ -1,7 +1,7 @@
 .root {
   height: 80%;
   width: 90%;
-  background-color: rgba(0, 0, 0, 0.76);
+  background-color: var(--panelres-bg-color);
   display: flex;
   align-items: center;
   justify-content: center;
