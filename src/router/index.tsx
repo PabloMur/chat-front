@@ -4,6 +4,7 @@ import WelcomePage from "../pages/Welcome";
 import { PasswordPage } from "../pages/Password";
 import { SignupPage } from "../pages/Signup";
 import { HomePage } from "../pages/Home";
+import { ProfilePage } from "../pages/Profile";
 //<Route path="stack" element={<TecPage />}></Route>
 
 function AppRoutes() {
@@ -11,9 +12,10 @@ function AppRoutes() {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<WelcomePage />} />
-        <Route path="password" element={<PasswordPage />}></Route>
         <Route path="signup" element={<SignupPage />}></Route>
         <Route path="home" element={<HomePage />}></Route>
+        <Route path="profile" element={<ProfilePage />}></Route>
+        <Route path="password" element={<PasswordPage />}></Route>
       </Route>
     </Routes>
   );

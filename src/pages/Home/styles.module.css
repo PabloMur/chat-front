@@ -1,5 +1,5 @@
 .root {
-  height: 80vh;
-  width: 90%;
+  height: 100vh;
+  width: 100%;
   background-color: var(--paneles-bg-color);
 }
