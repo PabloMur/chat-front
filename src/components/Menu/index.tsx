@@ -14,6 +14,9 @@ export const Menu = () => {
             <li className={css.li}>
               <a href="/settings">Settings</a>
             </li>
+            <li className={css.li}>
+              <a href="/my-rooms">My Rooms</a>
+            </li>
           </ul>
         </div>
       </div>

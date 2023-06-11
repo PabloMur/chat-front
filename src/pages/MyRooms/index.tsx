@@ -1,12 +1,12 @@
 import { Menu } from "../../components/Menu";
-import { ProfilePanel } from "../../components/ProfilePanel";
+import { MyRoomsPanel } from "../../components/MyRoomsPanel";
 import css from "./styles.module.css";
-export const ProfilePage = () => {
+export const MyRoomsPage = () => {
   return (
     <>
       <div className={css.root}>
         <Menu />
-        <ProfilePanel />
+        <MyRoomsPanel />
       </div>
     </>
   );

@@ -11,6 +11,7 @@ export const Options = () => {
         </div>
         <div className={css.buttonsContainer}>
           <button
+            className={css.button}
             onClick={() => {
               goto("/room/1234");
             }}
@@ -18,6 +19,7 @@ export const Options = () => {
             Crear una Sala
           </button>
           <button
+            className={css.button}
             onClick={() => {
               goto("/settings");
             }}
