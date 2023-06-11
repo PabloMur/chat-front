@@ -1,5 +1,6 @@
 import { Logo } from "../Logo";
 import css from "./styles.module.css";
+import { Link } from "react-router-dom";
 
 export const Menu = () => {
   return (
@@ -9,13 +10,13 @@ export const Menu = () => {
         <div className={css.linkContainer}>
           <ul className={css.list}>
             <li className={css.li}>
-              <a href="/profile">My Profile</a>
+              <Link to="/profile">My Profile</Link>
             </li>
             <li className={css.li}>
-              <a href="/settings">Settings</a>
+              <Link to="/settings">Settings</Link>
             </li>
             <li className={css.li}>
-              <a href="/my-rooms">My Rooms</a>
+              <Link to="/my-rooms">My Rooms</Link>
             </li>
           </ul>
         </div>
