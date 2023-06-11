@@ -1,7 +1,7 @@
 .container {
   background-color: var(--paneles-bg-color);
-  height: 80vh;
-  width: 90%;
+  height: 100%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;

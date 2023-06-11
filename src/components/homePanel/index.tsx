@@ -5,7 +5,6 @@ export const HomePanel = () => {
     <>
       <div className={css.root}>
         <Menu />
-        Home
       </div>
     </>
   );
