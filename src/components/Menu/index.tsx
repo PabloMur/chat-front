@@ -8,8 +8,12 @@ export const Menu = () => {
         <Logo />
         <div className={css.linkContainer}>
           <ul className={css.list}>
-            <li className={css.li}>My Profile</li>
-            <li className={css.li}>Settings</li>
+            <li className={css.li}>
+              <a href="/profile">My Profile</a>
+            </li>
+            <li className={css.li}>
+              <a href="/settings">Settings</a>
+            </li>
           </ul>
         </div>
       </div>

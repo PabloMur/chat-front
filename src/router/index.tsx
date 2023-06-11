@@ -5,6 +5,8 @@ import { PasswordPage } from "../pages/Password";
 import { SignupPage } from "../pages/Signup";
 import { HomePage } from "../pages/Home";
 import { ProfilePage } from "../pages/Profile";
+import { RoomPage } from "../pages/Room";
+import { SettingsPage } from "../pages/Settings";
 //<Route path="stack" element={<TecPage />}></Route>
 
 function AppRoutes() {
@@ -16,6 +18,8 @@ function AppRoutes() {
         <Route path="home" element={<HomePage />}></Route>
         <Route path="profile" element={<ProfilePage />}></Route>
         <Route path="password" element={<PasswordPage />}></Route>
+        <Route path="room/:id" element={<RoomPage />}></Route>
+        <Route path="settings" element={<SettingsPage />}></Route>
       </Route>
     </Routes>
   );
