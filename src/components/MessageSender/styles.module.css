@@ -1,0 +1,38 @@
+.root {
+  height: 10%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  border-top: 1px solid white;
+}
+
+.form {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input {
+  border: none;
+  height: 100%;
+  width: 90%;
+  background-color: var(--paneles-bg-color);
+  color: white;
+  padding: 10px;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.button {
+  height: 100%;
+  width: 10%;
+  border: none;
+  color: white;
+  background-color: black;
+}

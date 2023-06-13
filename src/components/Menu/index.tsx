@@ -19,6 +19,9 @@ export const Menu = () => {
               <Link to="/my-rooms">My Rooms</Link>
             </li>
           </ul>
+          <div className={css.actionsContainer}>
+            <li className={css.li}>{`Cerrar sesion [->`}</li>
+          </div>
         </div>
       </div>
     </>

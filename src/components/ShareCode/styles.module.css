@@ -1,0 +1,13 @@
+.root {
+  height: 60%;
+  width: 80%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.code {
+  font-size: 40px;
+}

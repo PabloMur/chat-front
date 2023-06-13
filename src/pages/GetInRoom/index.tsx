@@ -1,13 +1,13 @@
 import css from "./styles.module.css";
-import { HomePanel } from "../../components/homePanel";
+import { GetInRoomPanel } from "../../components/GetInRoomPanel";
 import { Menu } from "../../components/Menu";
 
-export const HomePage = () => {
+export const GetInRoomPage = () => {
   return (
     <>
       <div className={css.root}>
         <Menu />
-        <HomePanel />
+        <GetInRoomPanel />
       </div>
     </>
   );

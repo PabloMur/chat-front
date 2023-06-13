@@ -14,3 +14,13 @@ export const userTokenAtom = atom({
   key: "userToken",
   default: "",
 });
+
+export const roomIdAtom = atom({
+  key: "roomIdAtom",
+  default: "00000",
+});
+
+export const realtimeRoomIdAtom = atom({
+  key: "realtimeRoomIdAtom",
+  default: "",
+});

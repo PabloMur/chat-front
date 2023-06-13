@@ -37,3 +37,46 @@ export const APIGetToken = async (email: string, password: string) => {
     console.error(error);
   }
 };
+
+export const APICreateChatroom = async (email: string, token: string) => {
+  try {
+    const fetching = await fetch(
+      "https://chatback-theta.vercel.app/api/createRoom",
+      {
+        method: "POST",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ email }),
+      }
+    );
+    const response = await fetching.json();
+    console.log(response);
+    return response;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const APIGetRoomRealtimeID = async (roomId: string) => {
+  try {
+    const fetching = await fetch(
+      "https://chatback-theta.vercel.app/api/getRoomId",
+      {
+        method: "POST",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ roomId: roomId }),
+      }
+    );
+    const response = await fetching.json();
+    console.log(response);
+    return response;
+  } catch (error) {
+    console.error(error);
+  }
+};
