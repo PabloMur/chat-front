@@ -7,10 +7,3 @@
   justify-content: center;
   position: relative;
 }
-
-.form {
-  display: flex;
-  flex-direction: column;
-  background-color: rebeccapurple;
-  width: 30%;
-}

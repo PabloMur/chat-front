@@ -1,13 +1,44 @@
 .root {
-  height: 60%;
-  width: 80%;
+  height: fit-content;
+  width: 60%;
   position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: rgb(12, 12, 12);
+}
+
+.active {
+  display: flex;
+}
+
+.deactive {
+  display: none;
 }
 
 .code {
   font-size: 40px;
+}
+
+.crossContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  cursor: pointer;
+}
+
+.cross {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.textContainer {
+  text-align: center;
+  width: 100%;
+  padding: 10px;
 }

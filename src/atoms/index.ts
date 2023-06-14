@@ -22,5 +22,20 @@ export const roomIdAtom = atom({
 
 export const realtimeRoomIdAtom = atom({
   key: "realtimeRoomIdAtom",
-  default: "",
+  default: "realtimecode",
+});
+
+export const roomCreatorAtom = atom({
+  key: "roomCreatorAtom",
+  default: false,
+});
+
+export const roomGuestAtom = atom({
+  key: "roomGuestAtom",
+  default: false,
+});
+
+export const userLogged = atom({
+  key: "userLogged",
+  default: false,
 });

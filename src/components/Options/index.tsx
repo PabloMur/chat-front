@@ -1,8 +1,13 @@
-import { useCreateRoom, useGoTo } from "../../hooks";
+import { useCreateRoom, useGetInRoom, useGoTo } from "../../hooks";
 import css from "./styles.module.css";
 import { loaderAtom } from "../../atoms/uiAtoms";
 import { useRecoilValue, useSetRecoilState } from "recoil";
-import { emailAtom, roomIdAtom, userTokenAtom } from "../../atoms";
+import {
+  emailAtom,
+  realtimeRoomIdAtom,
+  roomIdAtom,
+  userTokenAtom,
+} from "../../atoms";
 
 export const Options = () => {
   const goto = useGoTo();
@@ -10,14 +15,24 @@ export const Options = () => {
   const token = useRecoilValue(userTokenAtom);
   const email = useRecoilValue(emailAtom);
   const roomIdSetter = useSetRecoilState(roomIdAtom);
+  const realtimeIdSetter = useSetRecoilState(realtimeRoomIdAtom);
 
   const handleCreateRoom = async () => {
     loaderSetter(true);
     const res = await useCreateRoom(email, token);
-    if (res) roomIdSetter(res.roomId);
+    if (res) {
+      roomIdSetter(res.roomId);
+      const resRealtime = await useGetInRoom(res.roomId);
+      realtimeIdSetter(resRealtime.roomId);
+    }
     loaderSetter(false);
     goto("/room/" + res.roomId);
   };
+
+  const handleGetInRoom = () => {
+    goto("/getin-room");
+  };
+
   return (
     <>
       <div className={css.root}>
@@ -28,12 +43,7 @@ export const Options = () => {
           <button className={css.button} onClick={handleCreateRoom}>
             Crear una Sala
           </button>
-          <button
-            className={css.button}
-            onClick={() => {
-              goto("/getin-room");
-            }}
-          >
+          <button className={css.button} onClick={handleGetInRoom}>
             Ingresar a una Sala
           </button>
         </div>
