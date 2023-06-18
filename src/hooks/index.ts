@@ -6,9 +6,6 @@ import {
   APIGetToken,
   APISendMessage,
 } from "../lib/APIcalls";
-import { useRecoilValue } from "recoil";
-import { userTokenAtom } from "../atoms";
-
 export const useCheckEmail = async (email: string) => {
   try {
     const checkEmail = await APICheckEmail(email);
@@ -17,7 +14,6 @@ export const useCheckEmail = async (email: string) => {
     console.error(error);
   }
 };
-
 export const useGetToken = async (email: string, password: string) => {
   try {
     const token = await APIGetToken(email, password);
