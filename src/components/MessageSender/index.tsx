@@ -14,6 +14,7 @@ export const MessageSender = () => {
       message: e.target.message.value,
     };
     await useSendMessage(message, token);
+    e.target.message.value = "";
   };
   return (
     <>
