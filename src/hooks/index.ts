@@ -4,7 +4,10 @@ import {
   APICreateChatroom,
   APIGetRoomRealtimeID,
   APIGetToken,
+  APISendMessage,
 } from "../lib/APIcalls";
+import { useRecoilValue } from "recoil";
+import { userTokenAtom } from "../atoms";
 
 export const useCheckEmail = async (email: string) => {
   try {
@@ -38,6 +41,15 @@ export const useGetInRoom = async (roomId: string) => {
   try {
     const getInRoom = await APIGetRoomRealtimeID(roomId);
     return getInRoom;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const useSendMessage = async (message: any, token: any) => {
+  try {
+    const sendMessageRes = await APISendMessage(message, token);
+    return sendMessageRes;
   } catch (error) {
     console.error(error);
   }

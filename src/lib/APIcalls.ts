@@ -80,3 +80,26 @@ export const APIGetRoomRealtimeID = async (roomId: string) => {
     console.error(error);
   }
 };
+
+export const APISendMessage = async (message: any, token: string) => {
+  try {
+    const fetching = await fetch(
+      "https://chatback-theta.vercel.app/api/message",
+      {
+        method: "PUT",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(message),
+      }
+    );
+    const response = await fetching.json();
+    console.log(response);
+    return response;
+  } catch (error) {
+    console.error(error);
+  }
+  return message;
+};
