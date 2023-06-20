@@ -1,7 +1,7 @@
 .root {
   height: 100vh;
   width: 100%;
-  background-image: linear-gradient(150deg, rgb(82, 4, 82), rgb(39, 12, 0));
+  background-image: linear-gradient(150deg, rgb(82, 4, 82), rgb(209, 137, 2));
   display: flex;
   justify-content: center;
   align-items: center;

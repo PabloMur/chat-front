@@ -1,3 +1,3 @@
 //type FromType = "owner" | "guest";
 
-export const Message = (messageText: string) => <div>{messageText}</div>;
+export const Message = (messageText: any) => <div>{messageText}</div>;
