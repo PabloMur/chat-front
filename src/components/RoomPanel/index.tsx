@@ -1,11 +1,19 @@
 import css from "./styles.module.css";
-import {} from "../../atoms";
+import { userLogged } from "../../atoms";
 import { RoomCode } from "../RoomCode";
 import { MessageSender } from "../MessageSender";
 import { MessagesPanel } from "../MessagesPanel";
+import { useEffect } from "react";
+import { useRecoilValue } from "recoil";
+import { useGoTo } from "../../hooks";
 
 //Este el el codigo de tu sala, compartelo con la persona que quieres hablar...
 export function RoomPanel() {
+  const userIsLogged = useRecoilValue(userLogged);
+  const goTo = useGoTo();
+  useEffect(() => {
+    if (!userIsLogged) goTo("/");
+  }, []);
   return (
     <>
       <div className={css.root}>

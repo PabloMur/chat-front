@@ -1,13 +1,19 @@
 import styles from "./styles.module.css";
 import { useCheckEmail, useGoTo } from "../../hooks";
-import { emailAtom } from "../../atoms";
+import { emailAtom, userLogged } from "../../atoms";
 import { loaderAtom } from "../../atoms/uiAtoms";
-import { useRecoilState, useSetRecoilState } from "recoil";
+import { useRecoilState, useSetRecoilState, useRecoilValue } from "recoil";
+import { useEffect } from "react";
 
 export const WelcomeForm = () => {
   const [email, setEmail] = useRecoilState(emailAtom);
   const loaderSetter = useSetRecoilState(loaderAtom);
   const goTo = useGoTo();
+  const userIsLogged = useRecoilValue(userLogged);
+
+  useEffect(() => {
+    if (userIsLogged) goTo("/home");
+  }, []);
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();

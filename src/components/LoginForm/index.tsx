@@ -1,5 +1,5 @@
 import styles from "./styles.module.css";
-import { emailAtom, userTokenAtom } from "../../atoms";
+import { emailAtom, userLogged, userTokenAtom } from "../../atoms";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { useGetToken, useGoTo } from "../../hooks";
 import { useState } from "react";
@@ -9,6 +9,7 @@ export const LoginForm = () => {
   const email = useRecoilValue(emailAtom);
   const setToken = useSetRecoilState(userTokenAtom);
   const setLoader = useSetRecoilState(loaderAtom);
+  const userLoggedSetter = useSetRecoilState(userLogged);
   const [password, setPassword] = useState("");
   const goTo = useGoTo();
 
@@ -17,6 +18,7 @@ export const LoginForm = () => {
     setLoader(true);
     const apiToken = await useGetToken(email, password);
     setToken(apiToken.token);
+    userLoggedSetter(true);
     setLoader(false);
     goTo("/home");
   };

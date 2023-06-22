@@ -3,11 +3,7 @@ import { realtimeDataBase, ref, onValue } from "../../lib/firebaseConn";
 import { useRecoilValue } from "recoil";
 import { realtimeRoomIdAtom } from "../../atoms";
 import { useEffect, useState, useRef } from "react";
-
-type MessageType = {
-  from: string;
-  message: string;
-};
+import Message from "../Message";
 
 export const MessagesPanel = () => {
   const chatroomId = useRecoilValue(realtimeRoomIdAtom);
@@ -38,19 +34,18 @@ export const MessagesPanel = () => {
   return (
     <div className={css.root} ref={messagesContainerRef}>
       <ul>
-        {messages.map((message: MessageType) => (
-          <li key={Math.random()}>
-            {message.from == "owner" ? (
-              <div className={css.owner}>
-                <div className={css.message}>{message.message}</div>
-              </div>
-            ) : (
-              <div className={css.guest}>
-                <div className={css.message}>{message.message}</div>
-              </div>
-            )}
-          </li>
-        ))}
+        {messages.map((message: any) => {
+          const messageText = message.message;
+          return (
+            <li key={Math.random()}>
+              {message.from === "owner" ? (
+                <Message isOwner={true} text={messageText} />
+              ) : (
+                <Message isOwner={false} text={messageText} />
+              )}
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

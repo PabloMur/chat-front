@@ -2,12 +2,13 @@ import { useSetRecoilState } from "recoil";
 import { loaderAtom } from "../../atoms/uiAtoms";
 import css from "./styles.module.css";
 import { useGetInRoom, useGoTo } from "../../hooks";
-import { realtimeRoomIdAtom, roomIdAtom } from "../../atoms";
+import { realtimeRoomIdAtom, roomIdAtom, roomCreatorAtom } from "../../atoms";
 
 export const GetInForm = () => {
   const loaderSetter = useSetRecoilState(loaderAtom);
   const roomIdSetter = useSetRecoilState(roomIdAtom);
   const realtimeIdSetter = useSetRecoilState(realtimeRoomIdAtom);
+  const roomCreatorSetter = useSetRecoilState(roomCreatorAtom);
   const goto = useGoTo();
 
   const handleSubmit = async (e: any) => {
@@ -17,6 +18,7 @@ export const GetInForm = () => {
     if (res) {
       roomIdSetter(e.target.room.value);
       realtimeIdSetter(res.roomId);
+      roomCreatorSetter(false);
       goto("/room/" + e.target.room.value);
       loaderSetter(false);
     }

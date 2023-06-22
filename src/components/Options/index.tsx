@@ -7,6 +7,7 @@ import {
   realtimeRoomIdAtom,
   roomIdAtom,
   userTokenAtom,
+  roomCreatorAtom,
 } from "../../atoms";
 
 export const Options = () => {
@@ -16,6 +17,7 @@ export const Options = () => {
   const email = useRecoilValue(emailAtom);
   const roomIdSetter = useSetRecoilState(roomIdAtom);
   const realtimeIdSetter = useSetRecoilState(realtimeRoomIdAtom);
+  const roomCreatorSetter = useSetRecoilState(roomCreatorAtom);
 
   const handleCreateRoom = async () => {
     loaderSetter(true);
@@ -24,6 +26,7 @@ export const Options = () => {
       roomIdSetter(res.roomId);
       const resRealtime = await useGetInRoom(res.roomId);
       realtimeIdSetter(resRealtime.roomId);
+      roomCreatorSetter(true);
     }
     loaderSetter(false);
     goto("/room/" + res.roomId);

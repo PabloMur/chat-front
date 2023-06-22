@@ -1,3 +1,30 @@
+.ownerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
 .owner {
-  background-color: red;
+  background-color: purple;
+  max-width: 300px;
+  padding: 5px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.guestContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.guest {
+  background-color: orange;
+  max-width: 300px;
+  padding: 5px;
+  border-radius: 4px;
+  color: black;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
 }

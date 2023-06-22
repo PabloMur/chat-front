@@ -1,3 +1,4 @@
+import { CloseSessionButton } from "../../ui/CloseSessionButton";
 import { Logo } from "../Logo";
 import css from "./styles.module.css";
 import { Link } from "react-router-dom";
@@ -20,7 +21,7 @@ export const Menu = () => {
             </li>
           </ul>
           <div className={css.actionsContainer}>
-            <li className={css.li}>{`Cerrar sesion [->`}</li>
+            <CloseSessionButton />
           </div>
         </div>
       </div>
