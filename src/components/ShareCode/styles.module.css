@@ -1,5 +1,4 @@
 .root {
-  height: fit-content;
   width: 60%;
   position: absolute;
   display: flex;
@@ -7,6 +6,9 @@
   align-items: center;
   justify-content: center;
   background-color: rgb(12, 12, 12);
+  margin: 0 auto;
+  border-radius: 4px;
+  padding: 10px;
 }
 
 .active {
@@ -26,7 +28,6 @@
   display: flex;
   align-items: center;
   justify-content: end;
-  cursor: pointer;
 }
 
 .cross {
@@ -35,10 +36,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .textContainer {
   text-align: center;
   width: 100%;
   padding: 10px;
+}
+
+.fadeInButton {
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

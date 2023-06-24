@@ -4,6 +4,7 @@ import { useRecoilValue, useSetRecoilState } from "recoil";
 import { useGetToken, useGoTo } from "../../hooks";
 import { useState } from "react";
 import { loaderAtom } from "../../atoms/uiAtoms";
+import { FormButton } from "../../ui/FormButton";
 
 export const LoginForm = () => {
   const email = useRecoilValue(emailAtom);
@@ -54,9 +55,7 @@ export const LoginForm = () => {
             />
           </label>
         </div>
-        <button className={styles.button} type="submit">
-          Iniciar sesión
-        </button>
+        <FormButton>Iniciar sesión</FormButton>
       </form>
     </div>
   );

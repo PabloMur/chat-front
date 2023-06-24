@@ -3,5 +3,6 @@
   width: 98%;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: flex-end;
+  padding-right: 5px;
 }

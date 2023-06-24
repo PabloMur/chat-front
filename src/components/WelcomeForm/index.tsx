@@ -4,6 +4,7 @@ import { emailAtom, userLogged } from "../../atoms";
 import { loaderAtom } from "../../atoms/uiAtoms";
 import { useRecoilState, useSetRecoilState, useRecoilValue } from "recoil";
 import { useEffect } from "react";
+import { FormButton } from "../../ui/FormButton";
 
 export const WelcomeForm = () => {
   const [email, setEmail] = useRecoilState(emailAtom);
@@ -44,9 +45,7 @@ export const WelcomeForm = () => {
             required
           />
         </div>
-        <button type="submit" className={styles.button}>
-          Enviar
-        </button>
+        <FormButton>Enviar</FormButton>
       </form>
     </div>
   );

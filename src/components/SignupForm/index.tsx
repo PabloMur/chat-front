@@ -1,13 +1,15 @@
 import css from "./styles.module.css";
-import { emailAtom } from "../../atoms";
+import { emailAtom, userLogged, userTokenAtom } from "../../atoms";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { equalText } from "../../lib/auxFunctions";
-import { useCreateUser, useGoTo } from "../../hooks";
+import { useCreateUser, useGetToken, useGoTo } from "../../hooks";
 import { loaderAtom } from "../../atoms/uiAtoms";
 export const SignupForm = () => {
   const email = useRecoilValue(emailAtom);
   const loaderSetter = useSetRecoilState(loaderAtom);
   const goTo = useGoTo();
+  const userLoggedSetter = useSetRecoilState(userLogged);
+  const setToken = useSetRecoilState(userTokenAtom);
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
@@ -17,6 +19,9 @@ export const SignupForm = () => {
     if (equalPass) {
       loaderSetter(true);
       await useCreateUser(email, pass1);
+      const apiToken = await useGetToken(email, pass1);
+      setToken(apiToken.token);
+      userLoggedSetter(true);
       loaderSetter(false);
       goTo("/home");
     }

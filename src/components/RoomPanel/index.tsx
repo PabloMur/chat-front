@@ -6,6 +6,7 @@ import { MessagesPanel } from "../MessagesPanel";
 import { useEffect } from "react";
 import { useRecoilValue } from "recoil";
 import { useGoTo } from "../../hooks";
+import { ShareCodeBanner } from "../ShareCode";
 
 //Este el el codigo de tu sala, compartelo con la persona que quieres hablar...
 export function RoomPanel() {
@@ -20,6 +21,7 @@ export function RoomPanel() {
         <div className={css.codeContainer}>
           <RoomCode />
         </div>
+        <ShareCodeBanner />
         <div className={css.messagesContainer}>
           <MessagesPanel />
         </div>
