@@ -1,0 +1,10 @@
+.root {
+  padding: 15px;
+  background-color: purple;
+  border-radius: 4px;
+  margin: 10px;
+}
+
+.root:hover {
+  cursor: pointer;
+}

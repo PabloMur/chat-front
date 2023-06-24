@@ -1,7 +1,7 @@
 import css from "./styles.module.css";
 import { realtimeDataBase, ref, onValue } from "../../lib/firebaseConn";
 import { useRecoilValue } from "recoil";
-import { realtimeRoomIdAtom } from "../../atoms";
+import { emailAtom, realtimeRoomIdAtom } from "../../atoms";
 import { useEffect, useState, useRef } from "react";
 import Message from "../Message";
 
@@ -10,6 +10,7 @@ export const MessagesPanel = () => {
   const db = realtimeDataBase;
   const chatroomRef = ref(db, "rooms/" + chatroomId + "/messages");
   const messagesContainerRef = useRef<HTMLDivElement>(null);
+  const email = useRecoilValue(emailAtom);
 
   const [messages, setMessages] = useState([]);
 
@@ -38,7 +39,7 @@ export const MessagesPanel = () => {
           const messageText = message.message;
           return (
             <li key={Math.random()}>
-              {message.from === "owner" ? (
+              {message.from === email ? (
                 <Message isOwner={true} text={messageText} />
               ) : (
                 <Message isOwner={false} text={messageText} />

@@ -1,16 +1,17 @@
 import { useRecoilValue } from "recoil";
 import { useSendMessage } from "../../hooks";
 import css from "./styles.module.css";
-import { realtimeRoomIdAtom, userTokenAtom } from "../../atoms";
+import { emailAtom, realtimeRoomIdAtom, userTokenAtom } from "../../atoms";
 
 export const MessageSender = () => {
   const token = useRecoilValue(userTokenAtom);
   const chatroomId = useRecoilValue(realtimeRoomIdAtom);
+  const email = useRecoilValue(emailAtom);
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     const message = {
       roomId: chatroomId,
-      from: "owner",
+      from: email,
       message: e.target.message.value,
     };
     await useSendMessage(message, token);

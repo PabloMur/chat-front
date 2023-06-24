@@ -9,6 +9,12 @@ export const emailAtom = atom({
   effects_UNSTABLE: [persistAtom],
 });
 
+export const userNameAtom = atom({
+  key: "userNameAtom",
+  default: "Unnamed",
+  effects_UNSTABLE: [persistAtom],
+});
+
 export const isUser = atom({
   key: "isUser",
   default: false,
@@ -30,6 +36,12 @@ export const roomIdAtom = atom({
 export const realtimeRoomIdAtom = atom({
   key: "realtimeRoomIdAtom",
   default: "realtimecode",
+  effects_UNSTABLE: [persistAtom],
+});
+
+export const myRoomsAtom = atom({
+  key: "myRoomsAtom",
+  default: [],
   effects_UNSTABLE: [persistAtom],
 });
 

@@ -18,6 +18,28 @@ export const APICheckEmail = async (email: any) => {
   }
 };
 
+export const APICreateUser = async (email: string, password: string) => {
+  try {
+    const fetching = await fetch("https://chatback-theta.vercel.app/api/user", {
+      method: "POST",
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        password,
+        name: "User",
+        hasCreatedRoom: false,
+      }),
+    });
+    const response = await fetching.json();
+    return response;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 export const APIGetToken = async (email: string, password: string) => {
   try {
     const fetching = await fetch(
@@ -74,8 +96,27 @@ export const APIGetRoomRealtimeID = async (roomId: string) => {
       }
     );
     const response = await fetching.json();
-    console.log(response);
     return response;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const APIGetRoomsIDs = async (email: string) => {
+  try {
+    const fetching = await fetch(
+      "https://chatback-theta.vercel.app/api/myRooms",
+      {
+        method: "POST",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      }
+    );
+    const response = await fetching.json();
+    return response.roomIds;
   } catch (error) {
     console.error(error);
   }
