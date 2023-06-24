@@ -7,15 +7,18 @@ export const RoomButton = ({ roomID }: any) => {
   const goto = useGoTo();
   const realtimeCodeSetter = useSetRecoilState(realtimeRoomIdAtom);
   const roomCodeSetter = useSetRecoilState(roomIdAtom);
+  const classes = [css.root, css.fadeInButton].join(" ");
+
   const handleClick = async () => {
     const getIn = await useGetInRoom(roomID);
     if (getIn) realtimeCodeSetter(getIn.roomId);
     roomCodeSetter(roomID);
     goto("/room/" + roomID);
   };
+
   return (
     <>
-      <div className={css.root} onClick={handleClick}>
+      <div className={classes} onClick={handleClick}>
         <h3>{roomID}</h3>
       </div>
     </>

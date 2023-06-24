@@ -17,7 +17,9 @@ export const MessagesPanel = () => {
   useEffect(() => {
     onValue(chatroomRef, (snapshot) => {
       const data = snapshot.val();
-      if (data) setMessages(data);
+      if (data) {
+        setMessages(data);
+      }
     });
   }, []);
 
@@ -40,9 +42,17 @@ export const MessagesPanel = () => {
           return (
             <li key={Math.random()}>
               {message.from === email ? (
-                <Message isOwner={true} text={messageText} />
+                <Message
+                  isOwner={true}
+                  text={messageText}
+                  isNew={message.isNew}
+                />
               ) : (
-                <Message isOwner={false} text={messageText} />
+                <Message
+                  isOwner={false}
+                  text={messageText}
+                  isNew={message.isNew}
+                />
               )}
             </li>
           );
