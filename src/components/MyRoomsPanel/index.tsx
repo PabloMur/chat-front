@@ -16,7 +16,7 @@ export const MyRoomsPanel = () => {
       const roomIDs = await useMyRoomsIDs(email);
       const guestRoomsIDs = await useMyGuestRoomsIDs(email);
       if (roomIDs) setRooms(roomIDs);
-      if (guestRoomsIDs) setGuestRooms(roomIDs);
+      if (guestRoomsIDs) setGuestRooms(guestRoomsIDs);
     };
     getRooms();
   }, []);
