@@ -26,8 +26,8 @@ export const MyRoomsPanel = () => {
       {rooms.map((roomID: string) => (
         <RoomButton key={roomID} roomID={roomID} />
       ))}
-      {guestRooms.map((roomID: string) => (
-        <GuestButton key={roomID} roomID={roomID} />
+      {guestRooms.map((guestRoomsIDs: string) => (
+        <GuestButton key={guestRoomsIDs} roomID={guestRoomsIDs} />
       ))}
     </div>
   );
