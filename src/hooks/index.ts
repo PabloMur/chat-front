@@ -43,6 +43,15 @@ export const useMyRoomsIDs = async (email: string) => {
   }
 };
 
+export const useMyGuestRoomsIDs = async (email: string) => {
+  try {
+    const myRooms = await APIGetRoomsIDs(email);
+    return myRooms;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 export const useCreateRoom = async (email: string, token: string) => {
   try {
     const createRoom = await APICreateChatroom(email, token);

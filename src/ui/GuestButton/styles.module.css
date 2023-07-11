@@ -1,6 +1,7 @@
 .root {
   padding: 15px;
-  background-color: purple;
+  background-color: orange;
+  color: black;
   border-radius: 4px;
   margin: 10px;
 }

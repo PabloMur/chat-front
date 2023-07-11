@@ -45,6 +45,12 @@ export const myRoomsAtom = atom({
   effects_UNSTABLE: [persistAtom],
 });
 
+export const myGuestRoomsAtom = atom({
+  key: "myGuestRoomsAtom",
+  default: [],
+  effects_UNSTABLE: [persistAtom],
+});
+
 export const roomCreatorAtom = atom({
   key: "roomCreatorAtom",
   default: false,
