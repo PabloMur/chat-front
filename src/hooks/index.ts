@@ -3,6 +3,7 @@ import {
   APICheckEmail,
   APICreateChatroom,
   APICreateUser,
+  APIGetGuestRoomsIDs,
   APIGetRoomRealtimeID,
   APIGetRoomsIDs,
   APIGetToken,
@@ -45,7 +46,7 @@ export const useMyRoomsIDs = async (email: string) => {
 
 export const useMyGuestRoomsIDs = async (email: string) => {
   try {
-    const myRooms = await APIGetRoomsIDs(email);
+    const myRooms = await APIGetGuestRoomsIDs(email);
     return myRooms;
   } catch (error) {
     console.error(error);
