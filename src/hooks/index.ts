@@ -8,6 +8,7 @@ import {
   APIGetRoomsIDs,
   APIGetToken,
   APISendMessage,
+  APISetImGuest,
 } from "../lib/APIcalls";
 export const useCheckEmail = async (email: string) => {
   try {
@@ -47,6 +48,19 @@ export const useMyRoomsIDs = async (email: string) => {
 export const useMyGuestRoomsIDs = async (email: string) => {
   try {
     const myRooms = await APIGetGuestRoomsIDs(email);
+    return myRooms;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const useAPISetImGuest = async (
+  email: string,
+  chatroomID: string,
+  roomId: string
+) => {
+  try {
+    const myRooms = await APISetImGuest(email, chatroomID, roomId);
     return myRooms;
   } catch (error) {
     console.error(error);

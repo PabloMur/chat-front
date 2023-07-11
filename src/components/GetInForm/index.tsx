@@ -1,14 +1,23 @@
-import { useSetRecoilState } from "recoil";
+import { useRecoilValue, useSetRecoilState } from "recoil";
 import { loaderAtom } from "../../atoms/uiAtoms";
 import css from "./styles.module.css";
-import { useGetInRoom, useGoTo } from "../../hooks";
-import { realtimeRoomIdAtom, roomIdAtom, roomCreatorAtom } from "../../atoms";
+import { useGetInRoom, useGoTo, useAPISetImGuest } from "../../hooks";
+import {
+  realtimeRoomIdAtom,
+  roomIdAtom,
+  roomCreatorAtom,
+  emailAtom,
+} from "../../atoms";
+
+//aca tengo que lograr que ademas de setear la ide de la sala, la ide de la room hacer la llamada al hook para que se setee en firestore tambien
 
 export const GetInForm = () => {
   const loaderSetter = useSetRecoilState(loaderAtom);
   const roomIdSetter = useSetRecoilState(roomIdAtom);
   const realtimeIdSetter = useSetRecoilState(realtimeRoomIdAtom);
   const roomCreatorSetter = useSetRecoilState(roomCreatorAtom);
+  const email = useRecoilValue(emailAtom);
+
   const goto = useGoTo();
 
   const handleSubmit = async (e: any) => {
@@ -19,6 +28,7 @@ export const GetInForm = () => {
       roomIdSetter(e.target.room.value);
       realtimeIdSetter(res.roomId);
       roomCreatorSetter(false);
+      useAPISetImGuest(email, res.roomId, e.target.room.value);
       goto("/room/" + e.target.room.value);
       loaderSetter(false);
     }

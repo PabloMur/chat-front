@@ -142,6 +142,34 @@ export const APIGetGuestRoomsIDs = async (email: string) => {
   }
 };
 
+export const APISetImGuest = async (
+  email: string,
+  chatroomID: string,
+  roomId: string
+) => {
+  try {
+    const fetching = await fetch(
+      "https://chatback-theta.vercel.app/api/guestRoom",
+      {
+        method: "POST",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          chatroomID,
+          email,
+          roomId,
+        }),
+      }
+    );
+    const response = await fetching.json();
+    return response.roomIds;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 export const APISendMessage = async (message: any, token: string) => {
   try {
     const fetching = await fetch(
