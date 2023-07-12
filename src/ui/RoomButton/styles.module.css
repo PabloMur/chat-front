@@ -3,6 +3,7 @@
   background-color: purple;
   border-radius: 4px;
   margin: 10px;
+  max-width: 85px;
 }
 
 .root:hover {

@@ -23,12 +23,18 @@ export const MyRoomsPanel = () => {
 
   return (
     <div className={css.root}>
-      {rooms.map((roomID: string) => (
-        <RoomButton key={roomID} roomID={roomID} />
-      ))}
-      {guestRooms.map((guestRoomsIDs: string) => (
-        <GuestButton key={guestRoomsIDs} roomID={guestRoomsIDs} />
-      ))}
+      <div className={css.myrooms}>
+        <h1>created by you</h1>
+        {rooms.map((roomID: string) => (
+          <RoomButton key={roomID} roomID={roomID} />
+        ))}
+      </div>
+      <div className={css.guestrooms}>
+        <h1>you are guest</h1>
+        {guestRooms.map((guestRoomsIDs: string) => (
+          <GuestButton key={guestRoomsIDs} roomID={guestRoomsIDs} />
+        ))}
+      </div>
     </div>
   );
 };
