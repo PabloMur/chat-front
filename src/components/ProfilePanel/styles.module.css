@@ -2,7 +2,17 @@
   height: 100%;
   width: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 40px;
+}
+
+.editButton {
+  border: none;
+  font-size: 17px;
+  border-radius: 4px;
+  padding: 5px 10px;
+  background-color: blue;
+  color: white;
+  margin-top: 20px;
 }
