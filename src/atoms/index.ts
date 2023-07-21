@@ -1,11 +1,18 @@
 import { atom } from "recoil";
 import { recoilPersist } from "recoil-persist";
+const testImagen =
+  "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png";
 
 const { persistAtom } = recoilPersist();
 
 export const emailAtom = atom({
   key: "email",
   default: "",
+  effects_UNSTABLE: [persistAtom],
+});
+export const userImageAtom = atom({
+  key: "userImageAtom",
+  default: testImagen,
   effects_UNSTABLE: [persistAtom],
 });
 
