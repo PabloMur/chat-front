@@ -10,6 +10,7 @@
 .closeButton {
   cursor: pointer;
   height: 70%;
+  width: 90%;
   border: none;
   padding: 10px;
   color: white;
