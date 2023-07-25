@@ -12,10 +12,18 @@ export const LoginForm = () => {
   const setLoader = useSetRecoilState(loaderAtom);
   const userLoggedSetter = useSetRecoilState(userLogged);
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(""); // Nuevo estado para manejar el error de validación
   const goTo = useGoTo();
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
+
+    // Validar el campo de la contraseña antes de enviar el formulario
+    if (!password) {
+      setError("Por favor ingrese una contraseña");
+      return;
+    }
+
     setLoader(true);
     const apiToken = await useGetToken(email, password);
     setToken(apiToken.token);
@@ -26,6 +34,7 @@ export const LoginForm = () => {
 
   const handleChange = (e: any) => {
     setPassword(e.target.value);
+    setError(""); // Limpiar el error al cambiar el valor del campo
   };
 
   return (
@@ -53,6 +62,8 @@ export const LoginForm = () => {
               placeholder="Contraseña"
               onChange={handleChange}
             />
+            {error && <p className={styles.error}>{error}</p>}{" "}
+            {/* Mostrar el mensaje de error */}
           </label>
         </div>
         <FormButton>Iniciar sesión</FormButton>

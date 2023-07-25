@@ -8,10 +8,11 @@
 }
 
 .closeButton {
+  cursor: pointer;
   height: 70%;
   border: none;
   padding: 10px;
   color: white;
-  background-color: rgb(29, 29, 29);
+  background-color: purple;
   border-radius: 4px;
 }
