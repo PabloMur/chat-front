@@ -26,10 +26,14 @@ export const LoginForm = () => {
 
     setLoader(true);
     const apiToken = await useGetToken(email, password);
-    setToken(apiToken.token);
-    userLoggedSetter(true);
-    setLoader(false);
-    goTo("/home");
+    if (apiToken.token) {
+      setToken(apiToken.token);
+      userLoggedSetter(true);
+      setLoader(false);
+      goTo("/home");
+    } else {
+      alert("contraseña incorrecta");
+    }
   };
 
   const handleChange = (e: any) => {

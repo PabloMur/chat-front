@@ -21,7 +21,7 @@ export const useCheckEmail = async (email: string) => {
 export const useGetToken = async (email: string, password: string) => {
   try {
     const token = await APIGetToken(email, password);
-    return token;
+    if (token) return token;
   } catch (error) {
     console.error(error);
   }
