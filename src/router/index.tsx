@@ -9,13 +9,15 @@ import { RoomPage } from "../pages/Room";
 import { SettingsPage } from "../pages/Settings";
 import { MyRoomsPage } from "../pages/MyRooms";
 import { GetInRoomPage } from "../pages/GetInRoom";
+import { Landing } from "../pages/Landing";
 //<Route path="stack" element={<TecPage />}></Route>
 
 function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<WelcomePage />} />
+        <Route index element={<Landing />} />
+        <Route path="email" element={<WelcomePage />} />
         <Route path="signup" element={<SignupPage />}></Route>
         <Route path="home" element={<HomePage />}></Route>
         <Route path="profile" element={<ProfilePage />}></Route>
