@@ -29,9 +29,7 @@ export const MyRoomsPanel = () => {
   return (
     <>
       <div className={css.root}>
-        <div className={css.loaderContainer}>
-          <Loader />
-        </div>
+        <Loader />
         <div className={css.myrooms}>
           <h1>Created by you</h1>
           <div className={css.myRoomsContainer}>

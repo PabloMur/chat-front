@@ -1,10 +1,18 @@
 .container {
-  background-color: black;
+  background-color: white;
   height: 100%;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+}
+
+.formContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 50%;
 }
 
 .form {
@@ -15,7 +23,7 @@
 }
 
 .title {
-  color: #fff;
+  color: black;
   font-size: 24px;
   text-align: center;
   margin-bottom: 20px;
@@ -28,7 +36,6 @@
 }
 
 .label {
-  color: #fff;
   font-size: 16px;
   margin-bottom: 5px;
 }
@@ -36,7 +43,7 @@
 .input {
   padding: 10px;
   border-radius: 5px;
-  border: none;
+  border: 1px solid black;
 }
 
 .button {
@@ -53,4 +60,15 @@
 
 .button:hover {
   background-color: #ccc;
+}
+
+.imageContainer {
+  height: 100%;
+  width: 50%;
+  background-image: url("../../assets/img/welcome.jpg");
+  background-position: left;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-top-left-radius: 400px;
+  border-bottom-left-radius: 300px;
 }

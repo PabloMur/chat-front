@@ -30,20 +30,23 @@ export const WelcomeForm = () => {
 
   return (
     <div className={styles.container}>
-      <form className={styles.form} onSubmit={handleSubmit}>
-        <h1 className={styles.title}>Ingresa Tu Email:</h1>
-        <div className={styles.inputContainer}>
-          <input
-            type="email"
-            id="email"
-            className={styles.input}
-            value={email}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <FormButton>Enviar</FormButton>
-      </form>
+      <div className={styles.formContainer}>
+        <form className={styles.form} onSubmit={handleSubmit}>
+          <h1 className={styles.title}>Ingresa Tu Email:</h1>
+          <div className={styles.inputContainer}>
+            <input
+              type="email"
+              id="email"
+              className={styles.input}
+              value={email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <FormButton>Enviar</FormButton>
+        </form>
+      </div>
+      <div className={styles.imageContainer}></div>
     </div>
   );
 };
