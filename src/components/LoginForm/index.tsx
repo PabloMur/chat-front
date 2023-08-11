@@ -18,7 +18,6 @@ export const LoginForm = () => {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
 
-    // Validar el campo de la contraseña antes de enviar el formulario
     if (!password) {
       setError("Por favor ingrese una contraseña");
       return;
@@ -43,35 +42,38 @@ export const LoginForm = () => {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Iniciar sesión</h1>
-      <form className={styles.form} onSubmit={handleSubmit}>
-        <div className={styles.formGroup}>
-          <label className={styles.label} htmlFor="email">
-            Correo electrónico
-            <input
-              className={styles.input}
-              type="email"
-              id="email"
-              placeholder={email}
-            />
-          </label>
-        </div>
-        <div className={styles.formGroup}>
-          <label className={styles.label} htmlFor="password">
-            Contraseña
-            <input
-              className={styles.input}
-              type="password"
-              id="password"
-              placeholder="Contraseña"
-              onChange={handleChange}
-            />
-            {error && <p className={styles.error}>{error}</p>}{" "}
-            {/* Mostrar el mensaje de error */}
-          </label>
-        </div>
-        <FormButton>Iniciar sesión</FormButton>
-      </form>
+      <div className={styles.formContainer}>
+        <h1 className={styles.title}>Iniciar sesión</h1>
+        <form className={styles.form} onSubmit={handleSubmit}>
+          <div className={styles.formGroup}>
+            <label className={styles.label} htmlFor="email">
+              Correo electrónico
+              <input
+                className={styles.input}
+                type="email"
+                id="email"
+                placeholder={email}
+              />
+            </label>
+          </div>
+          <div className={styles.formGroup}>
+            <label className={styles.label} htmlFor="password">
+              Contraseña
+              <input
+                className={styles.input}
+                type="password"
+                id="password"
+                placeholder="Contraseña"
+                onChange={handleChange}
+              />
+              {error && <p className={styles.error}>{error}</p>}{" "}
+              {/* Mostrar el mensaje de error */}
+            </label>
+          </div>
+          <FormButton>Iniciar sesión</FormButton>
+        </form>
+      </div>
+      <div className={styles.imageContainer}></div>
     </div>
   );
 };

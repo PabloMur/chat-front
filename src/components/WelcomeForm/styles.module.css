@@ -16,9 +16,6 @@
 }
 
 .form {
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   width: 300px;
 }
 
@@ -71,4 +68,14 @@
   background-repeat: no-repeat;
   border-top-left-radius: 400px;
   border-bottom-left-radius: 300px;
+  animation: fade-in 2s ease-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

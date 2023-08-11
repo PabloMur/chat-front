@@ -17,6 +17,7 @@
   align-items: center;
   padding: 30px;
   font-size: 25px;
+  animation: fade-in 0.5s ease-out;
 }
 
 p {
@@ -32,6 +33,7 @@ p {
   background-size: cover;
   border-top-left-radius: 300px;
   border-bottom-left-radius: 400px;
+  animation: fade-in 0.5s ease-out;
 }
 
 .comenzarButton {
@@ -42,7 +44,13 @@ p {
   background-color: purple;
   border-radius: 60px;
   cursor: pointer;
-  animation: fade-in 0.5s ease-out;
+  animation: fade-in 2s ease-out;
+  margin-top: 20px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.comenzarButton:hover {
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 @keyframes fade-in {
