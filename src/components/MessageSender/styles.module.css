@@ -34,6 +34,11 @@
   width: 10%;
   border: none;
   color: white;
-  background-color: black;
+  background-color: purple;
   cursor: pointer;
+  font-size: 20px;
+}
+
+.button:hover {
+  background-color: rgb(85, 2, 85);
 }

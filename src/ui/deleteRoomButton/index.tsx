@@ -1,9 +1,14 @@
 import css from "./styles.module.css";
+import { useRecoilValue, useSetRecoilState } from "recoil";
+import { modal } from "../../atoms/uiAtoms";
 
 export const DeleteRoomButton = ({ id }: any) => {
   let roomId = id;
+  const modalAtomValue = useRecoilValue(modal);
+  const modalStateSetter = useSetRecoilState(modal);
   const handleClick = () => {
-    alert(roomId);
+    console.log(roomId);
+    modalAtomValue ? modalStateSetter(false) : modalStateSetter(true);
   };
   return (
     <>

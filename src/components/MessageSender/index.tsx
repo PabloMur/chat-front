@@ -22,7 +22,7 @@ export const MessageSender = () => {
       <div className={css.root}>
         <form className={css.form} onSubmit={handleSubmit}>
           <input type="text" name="message" className={css.input} />
-          <button className={css.button}>send</button>
+          <button className={css.button}>Enviar</button>
         </form>
       </div>
     </>

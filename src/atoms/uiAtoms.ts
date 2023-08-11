@@ -7,6 +7,11 @@ export const loaderAtom = atom({
   default: false,
 });
 
+export const modal = atom({
+  key: "modalAtom",
+  default: false,
+});
+
 export const shareCodeAtom = atom({
   key: "shareCodeAtom",
   default: true,
