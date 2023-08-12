@@ -9,10 +9,11 @@
 
 .editButton {
   border: none;
-  font-size: 17px;
+  font-size: 20px;
   border-radius: 4px;
   padding: 5px 10px;
   background-color: var(--blue-button);
   color: white;
   margin-top: 20px;
+  cursor: pointer;
 }

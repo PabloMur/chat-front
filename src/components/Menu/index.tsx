@@ -11,6 +11,9 @@ export const Menu = () => {
         <div className={css.linkContainer}>
           <ul className={css.list}>
             <li className={css.li}>
+              <Link to="/home">Home</Link>
+            </li>
+            <li className={css.li}>
               <Link to="/profile">My Profile</Link>
             </li>
             <li className={css.li}>
