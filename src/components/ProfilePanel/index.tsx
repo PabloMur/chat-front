@@ -12,6 +12,7 @@ export const ProfilePanel = () => {
   useGetUserMe(token);
   const handleClick = () => {
     goTo("/settings");
+    console.log("as");
   };
   return (
     <>
