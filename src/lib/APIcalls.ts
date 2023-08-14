@@ -193,7 +193,7 @@ export const APISendMessage = async (message: any, token: string) => {
 
 export const APIGetUserMe = async (email: string, token: string) => {
   try {
-    const fetching = await fetch("http://localhost:3000/api/me", {
+    const fetching = await fetch("https://chatback-theta.vercel.app/api/me", {
       method: "POST",
       mode: "cors",
       headers: {
