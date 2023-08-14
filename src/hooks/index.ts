@@ -31,7 +31,7 @@ export const useGetToken = async (email: string, password: string) => {
 export const useGetUserMe = async (token: any) => {
   try {
     const data = await APIGetUserMe(token);
-    if (data) return data;
+    return data;
   } catch (error) {
     console.error(error);
   }

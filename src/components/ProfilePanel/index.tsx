@@ -10,19 +10,17 @@ import { useEffect } from "react";
 export const ProfilePanel = () => {
   const goTo = useGoTo();
   const token = useRecoilValue(userTokenAtom);
-  const getUserData = async () => {
-    const test = await useGetUserMe(token);
-    return test;
-  };
-  useEffect(() => {
-    console.log("as");
-    console.log(token);
 
+  useEffect(() => {
+    const getUserData = async () => {
+      const test = await useGetUserMe(token);
+      return test;
+    };
     getUserData();
   }, []);
+
   const handleClick = () => {
     goTo("/settings");
-    console.log("as");
   };
   return (
     <>
