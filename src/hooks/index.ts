@@ -28,10 +28,10 @@ export const useGetToken = async (email: string, password: string) => {
   }
 };
 
-export const useGetUserMe = async (token: any) => {
+export const useGetUserMe = async (email: string, token: any) => {
   try {
-    const data = await APIGetUserMe(token);
-    return data;
+    const data = await APIGetUserMe(email, token);
+    if (data) return data;
   } catch (error) {
     console.error(error);
   }

@@ -75,7 +75,6 @@ export const APICreateChatroom = async (email: string, token: string) => {
       }
     );
     const response = await fetching.json();
-    console.log(response);
     return response;
   } catch (error) {
     console.error(error);
@@ -185,7 +184,6 @@ export const APISendMessage = async (message: any, token: string) => {
       }
     );
     const response = await fetching.json();
-    console.log(response);
     return response;
   } catch (error) {
     console.error(error);
@@ -193,15 +191,16 @@ export const APISendMessage = async (message: any, token: string) => {
   return message;
 };
 
-export const APIGetUserMe = async (token: string) => {
+export const APIGetUserMe = async (email: string, token: string) => {
   try {
-    const fetching = await fetch("https://chatback-theta.vercel.app/api/me", {
-      method: "GET",
+    const fetching = await fetch("http://localhost:3000/api/me", {
+      method: "POST",
       mode: "cors",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
+      body: JSON.stringify({ email }),
     });
     const response = await fetching.json();
     return response;
