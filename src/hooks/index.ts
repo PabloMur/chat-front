@@ -7,6 +7,7 @@ import {
   APIGetRoomRealtimeID,
   APIGetRoomsIDs,
   APIGetToken,
+  APIGetUserMe,
   APISendMessage,
   APISetImGuest,
 } from "../lib/APIcalls";
@@ -22,6 +23,15 @@ export const useGetToken = async (email: string, password: string) => {
   try {
     const token = await APIGetToken(email, password);
     if (token) return token;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const useGetUserMe = async (token: any) => {
+  try {
+    const data = await APIGetUserMe(token);
+    if (data) return data;
   } catch (error) {
     console.error(error);
   }

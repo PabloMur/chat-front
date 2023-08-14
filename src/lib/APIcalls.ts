@@ -192,3 +192,21 @@ export const APISendMessage = async (message: any, token: string) => {
   }
   return message;
 };
+
+export const APIGetUserMe = async (token: string) => {
+  try {
+    const fetching = await fetch("https://chatback-theta.vercel.app/api/me", {
+      method: "POST",
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    const response = await fetching.json();
+    console.log(response);
+    return response;
+  } catch (error) {
+    console.error(error);
+  }
+};
