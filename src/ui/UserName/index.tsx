@@ -6,7 +6,7 @@ export const UserName = () => {
   const userName = useRecoilValue(userNameAtom);
   return (
     <>
-      <div className={css.root}>User Name: {userName}</div>
+      <div className={css.root}>Name: {userName}</div>
     </>
   );
 };

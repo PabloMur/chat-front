@@ -13,6 +13,7 @@ import {
 import { useEffect } from "react";
 import { Loader } from "../loader";
 import { loaderAtom } from "../../atoms/uiAtoms";
+import { DeleteUserButton } from "../../ui/deleteAccountButton";
 
 export const ProfilePanel = () => {
   const goTo = useGoTo();
@@ -26,10 +27,12 @@ export const ProfilePanel = () => {
     const getUserData = async () => {
       setLoader(true);
       const data = await useGetUserMe(email, token);
-      const userData = data.userData;
+
       if (data) {
-        setUserName(userData.name);
-        setUserProfileImage(userData.userImage);
+        console.log(data);
+
+        setUserName(data.name);
+        setUserProfileImage(data.userImage);
       }
       setLoader(false);
     };
@@ -50,6 +53,7 @@ export const ProfilePanel = () => {
           <button className={css.editButton} onClick={handleClick}>
             Editar Datos
           </button>
+          <DeleteUserButton />
         </div>
       </div>
     </>

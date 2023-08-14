@@ -58,6 +58,6 @@ label {
   border: none;
   border-radius: 4px;
   background-color: var(--blue-button);
-  color: white;
+  color: black;
   margin-top: 15px;
 }
