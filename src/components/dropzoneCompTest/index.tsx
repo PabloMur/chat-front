@@ -2,7 +2,7 @@ import { useCallback } from "react";
 import { useDropzone } from "react-dropzone";
 import { useRecoilState } from "recoil";
 import { userImageUploadUrlAtom } from "../../atoms/index";
-
+import css from "./styles.module.css";
 const FileUploader = () => {
   const [fileData, setFileData] = useRecoilState(userImageUploadUrlAtom);
 
@@ -22,7 +22,7 @@ const FileUploader = () => {
   return (
     <div>
       {!fileData && (
-        <div {...getRootProps()} className="dropzone">
+        <div {...getRootProps()} className={css.dropzone}>
           <input {...getInputProps()} />
           <p>
             Arrastra y suelta archivos aquí, o haz clic para seleccionar
