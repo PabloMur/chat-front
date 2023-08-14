@@ -1,6 +1,6 @@
 import css from "./styles.module.css";
-//hacer que line sea un componente de ui
-//tambien ver si puedo hacer que los inputs y button sean componentes de ui
+import FileUploader from "../dropzoneCompTest";
+
 export const SettingsPanel = () => {
   return (
     <>
@@ -12,7 +12,7 @@ export const SettingsPanel = () => {
             <div className={css.cont1}>
               <label>
                 <p>Imagen de perfil</p>
-                <input className={css.pic} type="text" />
+                <FileUploader />
               </label>
             </div>
             <div className={css.cont2}>
