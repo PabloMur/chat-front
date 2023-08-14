@@ -11,7 +11,6 @@ const FileUploader = () => {
     const reader = new FileReader();
 
     reader.onload = (event: any) => {
-      event.preventDefault();
       setFileData(event.target.result);
     };
 
