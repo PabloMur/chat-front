@@ -1,11 +1,10 @@
 .dropzone {
-  border: 2px dashed #cccccc;
+  border: 2px dashed var(--blue-button);
   border-radius: 4px;
   cursor: pointer;
   padding: 20px;
   text-align: center;
   cursor: pointer;
-  background-color: red;
   height: 100%;
   width: 100%;
 }

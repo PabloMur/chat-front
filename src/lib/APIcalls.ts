@@ -208,3 +208,43 @@ export const APIGetUserMe = async (email: string, token: string) => {
     console.error(error);
   }
 };
+
+export const APIDeleteChatroom = async (roomID: string, token: string) => {
+  try {
+    const fetching = await fetch(
+      "https://chatback-theta.vercel.app/api/deleteRoom?roomId=" + roomID,
+      {
+        method: "DELETE",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    const response = await fetching.json();
+    return response;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const APIDeleteAccount = async (token: string) => {
+  try {
+    const fetching = await fetch(
+      "https://chatback-theta.vercel.app/api/deleteAccount",
+      {
+        method: "DELETE",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    const response = await fetching.json();
+    return response;
+  } catch (error) {
+    console.error(error);
+  }
+};
