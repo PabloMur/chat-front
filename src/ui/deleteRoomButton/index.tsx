@@ -1,22 +1,29 @@
 import css from "./styles.module.css";
-import { useRecoilValue, useSetRecoilState } from "recoil";
+import { useRecoilState } from "recoil";
 import { modal } from "../../atoms/uiAtoms";
 
-export const DeleteRoomButton = ({ id }: any) => {
-  let roomId = id;
-  const modalAtomValue = useRecoilValue(modal);
-  const modalStateSetter = useSetRecoilState(modal);
+export const DeleteRoomButton = () => {
+  const [modalValue, modalStateSetter] = useRecoilState(modal);
   const handleClick = () => {
-    console.log(roomId);
-    modalAtomValue ? modalStateSetter(false) : modalStateSetter(true);
+    modalValue ? modalStateSetter(false) : modalStateSetter(true);
   };
   return (
-    <>
-      <div className={css.root} onClick={handleClick}>
-        <div className={css.dot}></div>
-        <div className={css.dot}></div>
-        <div className={css.dot}></div>
-      </div>
-    </>
+    (!modalValue && (
+      <>
+        <div className={css.root} onClick={handleClick}>
+          <div className={css.dot}></div>
+          <div className={css.dot}></div>
+          <div className={css.dot}></div>
+        </div>
+      </>
+    )) ||
+    (modalValue && (
+      <>
+        <div className={css.root} onClick={handleClick}>
+          <div className={css.line}></div>
+          <div className={css.invertedLine}></div>
+        </div>
+      </>
+    ))
   );
 };

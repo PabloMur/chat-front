@@ -15,3 +15,17 @@
   border-radius: 50%;
   background-color: white;
 }
+
+.line {
+  height: 2px;
+  width: 15px;
+  rotate: 45deg;
+  background-color: white;
+}
+
+.invertedLine {
+  height: 2px;
+  width: 15px;
+  rotate: -45deg;
+  background-color: white;
+}

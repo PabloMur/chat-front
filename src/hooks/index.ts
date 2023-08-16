@@ -3,6 +3,7 @@ import {
   APICheckEmail,
   APICreateChatroom,
   APICreateUser,
+  APIDeleteAccount,
   APIGetGuestRoomsIDs,
   APIGetRoomRealtimeID,
   APIGetRoomsIDs,
@@ -41,6 +42,15 @@ export const useCreateUser = async (email: string, password: string) => {
   try {
     const createdUser = await APICreateUser(email, password);
     return createdUser;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const useDeleteUser = async (token: string) => {
+  try {
+    const deletedUSer = await APIDeleteAccount(token);
+    return deletedUSer;
   } catch (error) {
     console.error(error);
   }

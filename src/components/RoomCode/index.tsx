@@ -9,7 +9,7 @@ export const RoomCode = () => {
     <>
       <div className={css.root}>
         <h2>ROOM: {roomCode}</h2>
-        <DeleteRoomButton id="1234"></DeleteRoomButton>
+        <DeleteRoomButton></DeleteRoomButton>
       </div>
     </>
   );
