@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
+  background-color: #ffdcd2;
 }
 
 .titleContainer {
@@ -27,7 +27,7 @@ p {
   background-color: black;
   width: 50%;
   height: 100%;
-  background-image: url("../../assets/img/landing.jpg");
+  background-image: url("../../assets/img/landing.png");
   background-position: left;
   background-repeat: no-repeat;
   background-size: cover;
