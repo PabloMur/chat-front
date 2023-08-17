@@ -14,14 +14,12 @@ export const SettingsPanel = () => {
   const loaderSetter = useSetRecoilState(loaderAtom);
   const goto = useGoTo();
   const [updatingName, setUpdatingName] = useState(userName);
-  const [updatingEmail, setUpdatingEmail] = useState(email);
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     loaderSetter(true);
     const update = await useUpdateUserData(token, email, {
       name: updatingName,
-      email: updatingEmail,
     });
     if (update) {
       loaderSetter(false);
@@ -51,18 +49,6 @@ export const SettingsPanel = () => {
                   name="username"
                   onChange={(e) => {
                     setUpdatingName(e.target.value);
-                  }}
-                />
-              </label>
-              <label>
-                <p>Email</p>
-                <input
-                  className={css.input}
-                  type="text"
-                  placeholder={email}
-                  name="username"
-                  onChange={(e) => {
-                    setUpdatingEmail(e.target.value);
                   }}
                 />
               </label>
