@@ -75,7 +75,7 @@ export const APICreateChatroom = async (email: string, token: string) => {
       }
     );
     const response = await fetching.json();
-    return response;
+    return response.roomCreated.roomId;
   } catch (error) {
     console.error(error);
   }
@@ -91,10 +91,11 @@ export const APIGetRoomRealtimeID = async (roomId: string) => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ roomId: roomId }),
+        body: JSON.stringify({ roomId }),
       }
     );
     const response = await fetching.json();
+    console.log(JSON.stringify(response) + " response de get in room");
     return response;
   } catch (error) {
     console.error(error);

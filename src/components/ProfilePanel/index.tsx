@@ -14,6 +14,7 @@ import { useEffect } from "react";
 import { Loader } from "../loader";
 import { loaderAtom } from "../../atoms/uiAtoms";
 import { DeleteUserButton } from "../../ui/deleteAccountButton";
+import { UserDeletedModal } from "../../ui/UserDeletedModal";
 
 export const ProfilePanel = () => {
   const goTo = useGoTo();
@@ -44,8 +45,9 @@ export const ProfilePanel = () => {
   };
   return (
     <>
-      <Loader></Loader>
       <div className={css.root}>
+        <Loader></Loader>
+        <UserDeletedModal />
         <UserImage />
         <div>
           <UserName />

@@ -17,3 +17,8 @@ export const shareCodeAtom = atom({
   default: true,
   effects_UNSTABLE: [persistAtom],
 });
+
+export const deltedAccountModalAtom = atom({
+  key: "deltedAccountModalAtom",
+  default: false,
+});

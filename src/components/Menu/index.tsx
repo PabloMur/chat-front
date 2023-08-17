@@ -1,5 +1,6 @@
 import { CloseSessionButton } from "../../ui/CloseSessionButton";
 import { Logo } from "../Logo";
+// una idea *** import settingsIcon from "../../assets/img/icons/setting.png";
 import css from "./styles.module.css";
 import { Link } from "react-router-dom";
 
@@ -14,13 +15,13 @@ export const Menu = () => {
               <Link to="/home">Home</Link>
             </li>
             <li className={css.li}>
-              <Link to="/profile">My Profile</Link>
+              <Link to="/my-rooms">Rooms</Link>
+            </li>
+            <li className={css.li}>
+              <Link to="/profile">Profile</Link>
             </li>
             <li className={css.li}>
               <Link to="/settings">Settings</Link>
-            </li>
-            <li className={css.li}>
-              <Link to="/my-rooms">My Rooms</Link>
             </li>
           </ul>
           <div className={css.actionsContainer}>

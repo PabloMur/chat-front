@@ -6,8 +6,7 @@ export const SettingsPanel = () => {
     <>
       <div className={css.root}>
         <form className={css.form}>
-          <h1>Configuracion de perfil</h1>
-          <div className={css.line}></div>
+          <h1 className={css.title}>Configuracion de perfil</h1>
           <div className={css.labelsContainer}>
             <div className={css.cont1}>
               <label>

@@ -21,15 +21,15 @@ export const Options = () => {
 
   const handleCreateRoom = async () => {
     loaderSetter(true);
-    const res = await useCreateRoom(email, token);
-    if (res) {
-      roomIdSetter(res.roomId);
-      const resRealtime = await useGetInRoom(res.roomId);
+    const roomId = await useCreateRoom(email, token);
+    if (roomId) {
+      roomIdSetter(roomId);
+      const resRealtime = await useGetInRoom(roomId);
       realtimeIdSetter(resRealtime.roomId);
       roomCreatorSetter(true);
     }
     loaderSetter(false);
-    goto("/room/" + res.roomId);
+    goto("/room/" + roomId);
   };
 
   const handleGetInRoom = () => {
