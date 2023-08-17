@@ -7,26 +7,21 @@
   justify-content: center;
 }
 
-.title {
-  background-color: purple;
-}
-
 .form {
   min-height: 80%;
   width: 80%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: column;
-  background-color: green;
 }
 
 .labelsContainer {
   display: flex;
   width: 100%;
-  height: 100%;
+  height: 250px;
   justify-content: space-around;
-  background-color: red;
+  align-items: center;
 }
 
 label {
@@ -63,7 +58,6 @@ label {
   margin-top: 15px;
 }
 .cont1 {
-  background-color: orange;
   display: flex;
   align-items: center;
   justify-content: space-between;

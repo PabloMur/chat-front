@@ -31,7 +31,7 @@ export const SettingsPanel = () => {
       <div className={css.root}>
         <Loader />
         <form className={css.form} onSubmit={handleSubmit}>
-          <h1 className={css.title}>Configuracion de perfil</h1>
+          <h1>Configuracion de perfil</h1>
           <div className={css.labelsContainer}>
             <div className={css.cont1}>
               <label>
