@@ -4,6 +4,7 @@ import {
   APICreateChatroom,
   APICreateUser,
   APIDeleteAccount,
+  APIDeleteChatroom,
   APIGetGuestRoomsIDs,
   APIGetRoomRealtimeID,
   APIGetRoomsIDs,
@@ -91,6 +92,15 @@ export const useCreateRoom = async (email: string, token: string) => {
   try {
     const createRoom = await APICreateChatroom(email, token);
     return createRoom;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const useDeleteRoom = async (roomId: string, token: string) => {
+  try {
+    const deleteRoom = await APIDeleteChatroom(roomId, token);
+    return deleteRoom;
   } catch (error) {
     console.error(error);
   }

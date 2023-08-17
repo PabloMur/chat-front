@@ -1,16 +1,25 @@
 import css from "./styles.module.css";
 import { useRecoilValue, useSetRecoilState } from "recoil";
-import { modal } from "../../atoms/uiAtoms";
-import { roomIdAtom } from "../../atoms/index";
+import { loaderAtom, modal } from "../../atoms/uiAtoms";
+import { roomIdAtom, userTokenAtom } from "../../atoms/index";
+import { useDeleteRoom, useGoTo } from "../../hooks/index";
 
 export function Modal() {
   const modalAtomValue = useRecoilValue(modal);
   const roomId = useRecoilValue(roomIdAtom);
-  const setLoader = useSetRecoilState(modal);
+  const setLoader = useSetRecoilState(loaderAtom);
+  const setModalStatus = useSetRecoilState(modal);
+  const token = useRecoilValue(userTokenAtom);
+  const goTo = useGoTo();
 
-  const test = () => {
-    alert("Eliminando la Sala: " + roomId);
-    setLoader(false);
+  const test = async () => {
+    setLoader(true);
+    const deletedRoom = await useDeleteRoom(roomId, token);
+    if (deletedRoom) {
+      setLoader(false);
+      setModalStatus(false);
+      goTo("/home");
+    }
   };
   return (
     modalAtomValue && (

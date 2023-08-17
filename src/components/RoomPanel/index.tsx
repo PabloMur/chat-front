@@ -8,6 +8,7 @@ import { useRecoilValue } from "recoil";
 import { useGoTo } from "../../hooks";
 import { ShareCodeBanner } from "../ShareCode";
 import { Modal } from "../modal";
+import { Loader } from "../loader";
 
 //Este el el codigo de tu sala, compartelo con la persona que quieres hablar...
 export function RoomPanel() {
@@ -19,6 +20,7 @@ export function RoomPanel() {
   return (
     <>
       <div className={css.root}>
+        <Loader />
         <div className={css.codeContainer}>
           <RoomCode />
         </div>
