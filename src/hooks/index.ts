@@ -12,7 +12,10 @@ import {
   APIGetUserMe,
   APISendMessage,
   APISetImGuest,
+  APIUpdateUserData,
 } from "../lib/APIcalls";
+
+//Room Hooks -->
 export const useCheckEmail = async (email: string) => {
   try {
     const checkEmail = await APICheckEmail(email);
@@ -29,7 +32,6 @@ export const useGetToken = async (email: string, password: string) => {
     console.error(error);
   }
 };
-
 export const useGetUserMe = async (email: string, token: any) => {
   try {
     const data = await APIGetUserMe(email, token);
@@ -50,12 +52,26 @@ export const useCreateUser = async (email: string, password: string) => {
 
 export const useDeleteUser = async (token: string) => {
   try {
-    const deletedUSer = await APIDeleteAccount(token);
-    return deletedUSer;
+    const deletedUser = await APIDeleteAccount(token);
+    return deletedUser;
   } catch (error) {
     console.error(error);
   }
 };
+
+export const useUpdateUserData = async (
+  token: string,
+  email: string,
+  newData: any
+) => {
+  try {
+    const updatedUser = await APIUpdateUserData(token, email, newData);
+    return updatedUser;
+  } catch (error) {
+    console.error(error);
+  }
+};
+//User Hooks -->
 
 export const useMyRoomsIDs = async (email: string) => {
   try {
@@ -123,6 +139,8 @@ export const useSendMessage = async (message: any, token: any) => {
     console.error(error);
   }
 };
+
+//Navitgation Room -->
 export const useGoTo = () => {
   const goTo = useNavigate();
   return goTo;

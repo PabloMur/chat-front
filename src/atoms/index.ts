@@ -18,7 +18,6 @@ export const userImageAtom = atom({
 export const userImageUploadUrlAtom = atom({
   key: "userImageUploadUrlAtom",
   default: "",
-  effects_UNSTABLE: [persistAtom],
 });
 
 export const userNameAtom = atom({

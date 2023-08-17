@@ -249,3 +249,30 @@ export const APIDeleteAccount = async (token: string) => {
     console.error(error);
   }
 };
+
+export const APIUpdateUserData = async (
+  token: string,
+  email: string,
+  newData: any
+) => {
+  try {
+    const fetching = await fetch(
+      "https://chatback-theta.vercel.app/api/meUpdate",
+      {
+        method: "PUT",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ email, newData }),
+      }
+    );
+    console.log({ email, newData });
+
+    const response = await fetching.json();
+    return response;
+  } catch (error) {
+    console.error(error);
+  }
+};
