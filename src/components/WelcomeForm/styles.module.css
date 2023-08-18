@@ -1,10 +1,19 @@
 .container {
-  background-color: white;
+  background-color: #ffdcd2;
   height: 100%;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
 .formContainer {
@@ -13,6 +22,12 @@
   justify-content: center;
   height: 100%;
   width: 50%;
+}
+@media screen and (max-width: 600px) {
+  .formContainer {
+    width: 100%;
+    z-index: 2;
+  }
 }
 
 .form {
@@ -24,6 +39,16 @@
   font-size: 24px;
   text-align: center;
   margin-bottom: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .title {
+    color: white;
+    font-size: 25px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.781);
+  }
 }
 
 .inputContainer {
@@ -43,22 +68,6 @@
   border: 1px solid black;
 }
 
-.button {
-  padding: 10px 20px;
-  background-color: #fff;
-  color: #000;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-  width: 100%;
-}
-
-.button:hover {
-  background-color: #ccc;
-}
-
 .imageContainer {
   height: 100%;
   width: 50%;
@@ -69,6 +78,18 @@
   border-top-left-radius: 400px;
   border-bottom-left-radius: 300px;
   animation: fade-in 2s ease-out;
+}
+@media screen and (max-width: 600px) {
+  .imageContainer {
+    position: absolute;
+    top: 5%;
+    right: 0;
+    height: 90%;
+    width: 95%;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 300px;
+    animation: fade-in 2s ease-out;
+  }
 }
 
 @keyframes fade-in {
