@@ -3,6 +3,7 @@ import { useDropzone } from "react-dropzone";
 import { useRecoilState } from "recoil";
 import { userImageUploadUrlAtom } from "../../atoms/index";
 import css from "./styles.module.css";
+
 const FileUploader = () => {
   const [fileData, setFileData] = useRecoilState(userImageUploadUrlAtom);
 

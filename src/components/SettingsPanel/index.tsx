@@ -1,7 +1,12 @@
 import css from "./styles.module.css";
 import FileUploader from "../dropzoneCompTest";
-import { useRecoilValue, useSetRecoilState } from "recoil";
-import { emailAtom, userNameAtom, userTokenAtom } from "../../atoms";
+import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
+import {
+  emailAtom,
+  userImageUploadUrlAtom,
+  userNameAtom,
+  userTokenAtom,
+} from "../../atoms";
 import { useGoTo, useUpdateUserData } from "../../hooks";
 import { Loader } from "../loader";
 import { loaderAtom } from "../../atoms/uiAtoms";
@@ -9,6 +14,9 @@ import { useState } from "react";
 
 export const SettingsPanel = () => {
   const userName = useRecoilValue(userNameAtom);
+  const [updateUserImage, setUpdateUserImage] = useRecoilState(
+    userImageUploadUrlAtom
+  );
   const email = useRecoilValue(emailAtom);
   const token = useRecoilValue(userTokenAtom);
   const loaderSetter = useSetRecoilState(loaderAtom);
@@ -18,10 +26,19 @@ export const SettingsPanel = () => {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     loaderSetter(true);
-    const update = await useUpdateUserData(token, email, {
+    let update;
+    let newData = {
       name: updatingName,
-    });
-    if (update) {
+    } as any;
+    if (updateUserImage !== "") {
+      newData = {
+        ...newData,
+        userImage: updateUserImage,
+      };
+    }
+    update = await useUpdateUserData(token, email, newData);
+    if (update.userUpdated) {
+      setUpdateUserImage("");
       loaderSetter(false);
       goto("/profile");
     }
