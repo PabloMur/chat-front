@@ -22,3 +22,8 @@ export const deltedAccountModalAtom = atom({
   key: "deltedAccountModalAtom",
   default: false,
 });
+
+export const burgerAtom = atom({
+  key: "burgerAtom",
+  default: false,
+});

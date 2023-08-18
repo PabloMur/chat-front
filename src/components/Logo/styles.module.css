@@ -7,3 +7,10 @@
   border-bottom: 1px solid white;
   cursor: pointer;
 }
+
+@media screen and (max-width: 600px) {
+  .root {
+    justify-content: space-between;
+    padding: 0 5%;
+  }
+}

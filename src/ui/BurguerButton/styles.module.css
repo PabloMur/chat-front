@@ -1,0 +1,35 @@
+.root {
+  display: none;
+  background-color: rgb(34, 34, 34);
+  height: 5vh;
+  width: 5vh;
+  border-radius: 4px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+@media screen and (max-width: 600px) {
+  .root {
+    display: flex;
+  }
+}
+
+.line {
+  height: 3px;
+  width: 80%;
+  background-color: white;
+}
+.crossline {
+  height: 3px;
+  width: 80%;
+  background-color: white;
+}
+
+.crossline:nth-child(1) {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.crossline:nth-child(2) {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
