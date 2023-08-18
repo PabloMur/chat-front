@@ -3,3 +3,9 @@
   width: 100%;
   display: flex;
 }
+
+@media screen and (max-width: 600px) {
+  .root {
+    flex-direction: column;
+  }
+}
