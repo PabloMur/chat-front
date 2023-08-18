@@ -31,12 +31,13 @@ export const SignupForm = () => {
     <>
       <div className={css.root}>
         <form className={css.form} onSubmit={handleSubmit}>
+          <h2 className={css.formTitle}>Registrate</h2>
           <label className={css.label}>
-            <p>Email</p>
+            <p className={css.labelTitle}>Email</p>
             <input type="text" value={email} required className={css.input} />
           </label>
           <label className={css.label}>
-            <p>Ingresa una contraseña</p>
+            <p className={css.labelTitle}>Ingresa una contraseña</p>
             <input
               type="password"
               name="passOne"
@@ -45,7 +46,7 @@ export const SignupForm = () => {
             />
           </label>
           <label className={css.label}>
-            <p>Repite la contraseña</p>
+            <p className={css.labelTitle}>Repite la contraseña</p>
             <input
               type="password"
               name="passTwo"
