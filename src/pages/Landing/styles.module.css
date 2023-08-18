@@ -28,6 +28,7 @@
   font-size: 25px;
   animation: fade-in 0.5s ease-out;
 }
+
 @media screen and (max-width: 600px) {
   .titleContainer {
     width: 100%;
@@ -38,12 +39,17 @@
   }
 }
 
+.title {
+  font-size: 60px;
+}
+
 p {
   text-align: center;
   color: black;
 }
 @media screen and (max-width: 600px) {
   p {
+    font-size: 30px;
     color: #ffdcd2;
   }
 }
@@ -83,6 +89,13 @@ p {
   animation: fade-in 2s ease-out;
   margin-top: 20px;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 600px) {
+  .comenzarButton {
+    font-size: 25px;
+    margin: 0;
+  }
 }
 
 .comenzarButton:hover {

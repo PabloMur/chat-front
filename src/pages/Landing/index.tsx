@@ -10,7 +10,7 @@ export const Landing = () => {
     <>
       <div className={css.root}>
         <div className={css.titleContainer}>
-          <h1>Bienvenido a ChatLand</h1>
+          <h1 className={css.title}>Bienvenido a ChatLand</h1>
           <p>"Donde las conversaciones fluyen y las risas nunca faltan..."</p>
           <button className={css.comenzarButton} onClick={handleClick}>
             Comenzar!
