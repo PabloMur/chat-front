@@ -256,17 +256,18 @@ export const APIUpdateUserData = async (
   newData: any
 ) => {
   try {
-    if (newData.userImage) console.log("tiene user image");
-
-    const fetching = await fetch("http://localhost:3000/api/meUpdate", {
-      method: "PUT",
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify({ email, newData }),
-    });
+    const fetching = await fetch(
+      "https://chatback-theta.vercel.app/api/meUpdate",
+      {
+        method: "PUT",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ email, newData }),
+      }
+    );
     console.log({ email, newData });
 
     const response = await fetching.json();
