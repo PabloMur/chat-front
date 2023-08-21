@@ -3,6 +3,7 @@ import { BrowserRouter } from "react-router-dom";
 import { AppRoutes } from "./router";
 import { RecoilRoot } from "recoil";
 import { Loader } from "./components/loader";
+require("dotenv").config();
 
 function App() {
   return (

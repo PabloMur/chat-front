@@ -1,7 +1,10 @@
-const callURL =
-  process.env.ENVIROMENT == "production"
-    ? "https://chatback-theta.vercel.app/api/"
-    : "http://localhost:3000/api/";
+let callURL: string;
+
+if ((process.env.ENVIROMENT as any) === "production") {
+  callURL = "https://chatback-theta.vercel.app/api/";
+} else {
+  callURL = "http://localhost:3000/api/";
+}
 export const APICheckEmail = async (email: any) => {
   try {
     const fetching = await fetch(callURL + "checkEmail", {
