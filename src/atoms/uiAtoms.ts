@@ -27,3 +27,8 @@ export const burgerAtom = atom({
   key: "burgerAtom",
   default: false,
 });
+
+export const menuDesplegableAtom = atom({
+  key: "menuDesplegableAtom",
+  default: false,
+});

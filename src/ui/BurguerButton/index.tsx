@@ -1,9 +1,11 @@
 import css from "./styles.module.css";
-import { burgerAtom } from "../../atoms/uiAtoms";
-import { useRecoilValue } from "recoil";
+import { menuDesplegableAtom } from "../../atoms/uiAtoms";
+import { useRecoilValue, useSetRecoilState } from "recoil";
+
 export const ThreeLineButton = () => {
+  const setMenuDesplegable = useSetRecoilState(menuDesplegableAtom);
   const handleClick = () => {
-    alert("click en burguer");
+    setMenuDesplegable(true);
   };
   return (
     <>
@@ -16,8 +18,9 @@ export const ThreeLineButton = () => {
   );
 };
 export const CrossButton = () => {
+  const setMenuDesplegable = useSetRecoilState(menuDesplegableAtom);
   const handleClick = () => {
-    alert("click en burguer");
+    setMenuDesplegable(false);
   };
   return (
     <>
@@ -30,6 +33,6 @@ export const CrossButton = () => {
 };
 
 export const BurgerButton = () => {
-  const burgerState = useRecoilValue(burgerAtom);
-  return <>{burgerState ? <ThreeLineButton /> : <CrossButton />}</>;
+  const burgerState = useRecoilValue(menuDesplegableAtom);
+  return burgerState ? <CrossButton /> : <ThreeLineButton />;
 };

@@ -1,6 +1,6 @@
 import { CloseSessionButton } from "../../ui/CloseSessionButton";
 import { Logo } from "../Logo";
-// una idea *** import settingsIcon from "../../assets/img/icons/setting.png";
+import { MenuDesplegable } from "../MenuDesplegable";
 import css from "./styles.module.css";
 import { Link } from "react-router-dom";
 
@@ -28,6 +28,7 @@ export const Menu = () => {
             <CloseSessionButton />
           </div>
         </div>
+        <MenuDesplegable />
       </div>
     </>
   );
