@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./styles.module.css";
 import { emailAtom, userLogged, userTokenAtom } from "../../atoms";
 import { loaderAtom } from "../../atoms/uiAtoms";
-import { useRecoilValue, useSetRecoilState, useRecoilState } from "recoil";
+import { useRecoilValue, useSetRecoilState } from "recoil";
 import { useGetToken, useGoTo } from "../../hooks";
 import { FormButton } from "../../ui/FormButton";
 
