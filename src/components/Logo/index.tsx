@@ -9,8 +9,8 @@ export const Logo = () => {
   };
   return (
     <>
-      <div className={css.root} onClick={handleClick}>
-        <h2>Chat-Land</h2>
+      <div className={css.root}>
+        <h2 onClick={handleClick}>Chat-Land</h2>
         <BurgerButton />
       </div>
     </>

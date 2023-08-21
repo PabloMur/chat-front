@@ -1,12 +1,12 @@
 .root {
   height: 250px;
   width: 250px;
-  background-color: white;
+  background-color: purple;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-self: center;
-  padding: 5px;
+  padding: 1px;
   margin: 10px;
 }
 
