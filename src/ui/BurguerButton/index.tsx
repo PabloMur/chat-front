@@ -24,7 +24,7 @@ export const CrossButton = () => {
   };
   return (
     <>
-      <div className={css.root} onClick={handleClick}>
+      <div className={css.crossRoot} onClick={handleClick}>
         <div className={css.crossline}></div>
         <div className={css.crossline}></div>
       </div>
