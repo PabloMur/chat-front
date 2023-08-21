@@ -9,6 +9,7 @@ import {
   userTokenAtom,
   roomCreatorAtom,
 } from "../../atoms";
+import { CustomTitle } from "../../ui/customTitle";
 
 export const Options = () => {
   const goto = useGoTo();
@@ -40,7 +41,9 @@ export const Options = () => {
     <>
       <div className={css.root}>
         <div className={css.textContainer}>
-          <h2>Welcome</h2>
+          <CustomTitle>
+            <h2>Welcome</h2>
+          </CustomTitle>
         </div>
         <div className={css.buttonsContainer}>
           <button className={css.button} onClick={handleCreateRoom}>

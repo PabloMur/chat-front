@@ -12,6 +12,8 @@ export const APICheckEmail = async (email: any) => {
       body: JSON.stringify({ email }),
     });
     const response = await fetching.json();
+    console.log(response);
+
     return response;
   } catch (error) {
     console.error(error);

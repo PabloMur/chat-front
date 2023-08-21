@@ -1,21 +1,22 @@
+import React, { useEffect, useState } from "react";
 import styles from "./styles.module.css";
 import { emailAtom, userLogged, userTokenAtom } from "../../atoms";
-import { useRecoilValue, useSetRecoilState } from "recoil";
-import { useGetToken, useGoTo } from "../../hooks";
-import { useState } from "react";
 import { loaderAtom } from "../../atoms/uiAtoms";
+import { useRecoilValue, useSetRecoilState, useRecoilState } from "recoil";
+import { useGetToken, useGoTo } from "../../hooks";
 import { FormButton } from "../../ui/FormButton";
 
 export const LoginForm = () => {
   const email = useRecoilValue(emailAtom);
   const setToken = useSetRecoilState(userTokenAtom);
-  const setLoader = useSetRecoilState(loaderAtom);
+  const setLoader = useSetRecoilState(loaderAtom); // Usamos useRecoilState para actualizar el loader
   const userLoggedSetter = useSetRecoilState(userLogged);
   const [password, setPassword] = useState("");
-  const [error, setError] = useState(""); // Nuevo estado para manejar el error de validación
+  const [error, setError] = useState("");
+  const [image, setImage] = useState(false);
   const goTo = useGoTo();
 
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!password) {
@@ -31,14 +32,19 @@ export const LoginForm = () => {
       setLoader(false);
       goTo("/home");
     } else {
-      alert("contraseña incorrecta");
+      setError("Contraseña incorrecta"); // Actualizamos el mensaje de error
+      setLoader(false); // Importante: también debemos desactivar el loader en caso de error
     }
   };
 
-  const handleChange = (e: any) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPassword(e.target.value);
     setError(""); // Limpiar el error al cambiar el valor del campo
   };
+
+  useEffect(() => {
+    setImage(true);
+  }, []);
 
   return (
     <div className={styles.container}>
@@ -53,6 +59,7 @@ export const LoginForm = () => {
                 type="email"
                 id="email"
                 placeholder={email}
+                readOnly
               />
             </label>
           </div>
@@ -64,16 +71,16 @@ export const LoginForm = () => {
                 type="password"
                 id="password"
                 placeholder="Contraseña"
+                value={password}
                 onChange={handleChange}
               />
-              {error && <p className={styles.error}>{error}</p>}{" "}
-              {/* Mostrar el mensaje de error */}
+              {error && <p className={styles.error}>{error}</p>}
             </label>
           </div>
           <FormButton>Iniciar sesión</FormButton>
         </form>
       </div>
-      <div className={styles.imageContainer}></div>
+      {image && <div className={styles.imageContainer}></div>}
     </div>
   );
 };

@@ -21,7 +21,7 @@ export const WelcomeForm = () => {
     loaderSetter(true);
     let test = await useCheckEmail(email);
     loaderSetter(false);
-    test.exists ? goTo("/password") : goTo("/signup");
+    test.response ? goTo("/password") : goTo("/signup");
   };
 
   const handleChange = (e: any) => {
