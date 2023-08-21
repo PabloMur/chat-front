@@ -1,6 +1,6 @@
 import css from "./styles.module.css";
 import { burgerAtom } from "../../atoms/uiAtoms";
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useRecoilValue } from "recoil";
 export const ThreeLineButton = () => {
   const handleClick = () => {
     alert("click en burguer");
