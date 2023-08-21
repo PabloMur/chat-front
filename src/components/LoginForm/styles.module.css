@@ -6,10 +6,21 @@
   width: 100%;
 }
 
+@media screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
+}
+
 .title {
-  font-size: 24px;
-  margin-bottom: 24px;
-  color: black;
+  color: white;
+  font-size: 25px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.781);
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .form {
@@ -17,6 +28,7 @@
   flex-direction: column;
   width: 300px;
   color: black;
+  z-index: 3;
 }
 
 .formGroup {
@@ -72,6 +84,18 @@
   border-top-left-radius: 400px;
   border-bottom-left-radius: 300px;
   animation: fade-in 2s ease-out;
+}
+
+@media screen and (max-width: 600px) {
+  .imageContainer {
+    position: absolute;
+    width: 95%;
+    height: 90%;
+    border-top-left-radius: 40px;
+    top: 5%;
+    right: 0;
+    margin-left: 10%;
+  }
 }
 
 @keyframes fade-in {

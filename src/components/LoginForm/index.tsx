@@ -53,7 +53,7 @@ export const LoginForm = () => {
         <form className={styles.form} onSubmit={handleSubmit}>
           <div className={styles.formGroup}>
             <label className={styles.label} htmlFor="email">
-              Correo electrónico
+              <h2 className={styles.title}>Correo electrónico</h2>
               <input
                 className={styles.input}
                 type="email"
