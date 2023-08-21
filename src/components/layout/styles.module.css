@@ -1,16 +1,8 @@
 .root {
   height: 100vh;
   width: 100%;
-  background-image: linear-gradient(150deg, rgb(82, 4, 82), rgb(255, 127, 223));
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  padding: 10vh 5%;
-}
-
-@media screen and (max-width: 600px) {
-  .root {
-    padding: 0;
-  }
 }

@@ -1,5 +1,5 @@
 .root {
-  background-color: black;
+  background-color: #ffdcd2;
   height: 100%;
   width: 100%;
   display: flex;
@@ -38,10 +38,10 @@
 }
 
 .button {
-  padding: 5px 10px;
+  padding: 10px 20px;
   font-size: 20px;
   background-color: purple;
-  color: #fff;
+  color: #ffdcd2;
   border: none;
   border-radius: 4px;
   cursor: pointer;
