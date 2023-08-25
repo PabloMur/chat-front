@@ -11,6 +11,7 @@
   --borders: rgba(255, 235, 205, 0.288);
   --blue-button: #007bff;
   --background-general: rgb(255, 223, 209);
+  --background-messageContainer: rgb(59 0 59);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

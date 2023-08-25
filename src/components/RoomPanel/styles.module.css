@@ -15,6 +15,7 @@
   justify-content: end;
   padding-right: 15px;
   background-color: var(--background-general);
+  border-bottom: 1px solid purple;
 }
 
 .messagesContainer {

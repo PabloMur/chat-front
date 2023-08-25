@@ -3,7 +3,7 @@
   min-height: 100%;
   max-width: 100%;
   min-width: 100%;
-  background-color: var(--paneles-bg-color);
+  background-color: var(--background-messageContainer);
   padding: 10px;
   overflow-y: scroll;
 }
