@@ -6,3 +6,9 @@
   justify-content: center;
   background-color: purple;
 }
+
+@media screen and (max-width: 600px) {
+  .root {
+    flex-direction: column;
+  }
+}

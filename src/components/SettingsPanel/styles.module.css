@@ -1,10 +1,16 @@
 .root {
   height: 100%;
   width: 100%;
-  background-color: #ffdcd2;
+  background-color: var(--background-general);
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media screen and (max-width: 600px) {
+  .root {
+    flex-direction: column;
+  }
 }
 
 .form {
