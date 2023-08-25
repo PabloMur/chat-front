@@ -41,9 +41,7 @@ export const Options = () => {
     <>
       <div className={css.root}>
         <div className={css.textContainer}>
-          <CustomTitle>
-            <h2>Welcome</h2>
-          </CustomTitle>
+          <CustomTitle>Welcome</CustomTitle>
         </div>
         <div className={css.buttonsContainer}>
           <button className={css.button} onClick={handleCreateRoom}>

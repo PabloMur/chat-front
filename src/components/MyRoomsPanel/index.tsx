@@ -7,6 +7,7 @@ import { emailAtom, myGuestRoomsAtom, myRoomsAtom } from "../../atoms";
 import { GuestButton } from "../../ui/GuestButton";
 import { Loader } from "../loader";
 import { loaderAtom } from "../../atoms/uiAtoms";
+import { CustomTitle } from "../../ui/customTitle";
 
 export const MyRoomsPanel = () => {
   const [rooms, setRooms] = useRecoilState(myRoomsAtom);
@@ -31,7 +32,7 @@ export const MyRoomsPanel = () => {
       <div className={css.root}>
         <Loader />
         <div className={css.myrooms}>
-          <h1>Created by you</h1>
+          <CustomTitle>Created by you</CustomTitle>
           <div className={css.myRoomsContainer}>
             {rooms.map((roomID: string) => (
               <RoomButton key={roomID} roomID={roomID} />
@@ -39,7 +40,7 @@ export const MyRoomsPanel = () => {
           </div>
         </div>
         <div className={css.guestrooms}>
-          <h1>Guest</h1>
+          <CustomTitle>Created by you</CustomTitle>
           <div className={css.myRoomsContainer}>
             {guestRooms.map((guestRoomsIDs: string) => (
               <GuestButton key={guestRoomsIDs} roomID={guestRoomsIDs} />

@@ -11,6 +11,7 @@ import { useGoTo, useUpdateUserData } from "../../hooks";
 import { Loader } from "../loader";
 import { loaderAtom } from "../../atoms/uiAtoms";
 import { useState } from "react";
+import { CustomTitle } from "../../ui/customTitle";
 
 export const SettingsPanel = () => {
   const userName = useRecoilValue(userNameAtom);
@@ -46,9 +47,9 @@ export const SettingsPanel = () => {
   return (
     <>
       <div className={css.root}>
+        <CustomTitle>Configuracion de perfil</CustomTitle>
         <Loader />
         <form className={css.form} onSubmit={handleSubmit}>
-          <h1>Configuracion de perfil</h1>
           <div className={css.labelsContainer}>
             <div className={css.cont1}>
               <label>
